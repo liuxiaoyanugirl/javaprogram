@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+    <title>Bootstrap</title>
+
+    <!-- Bootstrap -->
+    <link rel ="stylesheet" href="css/bootstrap.css" >
+<style>
+    .nav-header{
+        width: 100%;
+        height: 10px;
+        background-color: coral;
+    }
+    .col-lg-6{
+        margin-top: 30px;
+        margin-left: 160px;
+    }
+    .font-img{
+        margin-left: -900px;
+        margin-top: 20px;
+    }
+    .input-group{
+        width: 500px;
+    }
+    .btn-lg{
+        margin-left: 900px;
+        margin-top: 30px;
+        border:1px solid white;
+    }
+    .login{
+        position: absolute;
+         width: 420px;
+        height: 340px;
+        margin: 60px 100px;
+        background-color: coral;
+    }
+    .login1{
+        position: relative;
+        top: 20px;
+        left: 30px;
+        width: 360px;
+        height: 280px;
+        background-color: white;
+    }
+    .avater{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 140px;
+        border: 3px solid coral;
+        border-radius: 100px;
+        margin: 10px auto;
+    }
+    .user{
+        position: relative;
+        top: 30px;
+        left: 0;
+    }
+    .password{
+        position: relative;
+        top: 30px;
+    }
+    .form-control{
+        position: relative;
+        left: 40px;
+        width: 80%;
+        margin-bottom: -26px;
+    }
+    .submit1{
+        margin-top: 20px;
+        margin-left: 40px;
+        width: 80%;
+        height: 30px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid white;
+        background-color: coral;
+    }
+    /*#btn1{*/
+    /*    margin: 5px 600px;*/
+    /*}*/
+    #btn2{
+        margin: 5px 600px;
+    }
+</style>
+
+</head>
+<body>
+<div>
+<div class="nav-header">
+</div>
+<div class="page-header" style="margin-top: -20px">
+    <img class="font-img" src="images/weibofont.png">
+    <div class="col-lg-6">
+        <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+        </div><!-- /input-group -->
+    </div>
+    <button type="button" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-home" aria-hidden="true"> 首页</span>
+    </button>
+</div>
+
+<div class="login">
+    <div class="login1">
+        <div >
+            <img class="avater" src="images/6.jpg"/>
+        </div>
+    <form>
+        <div class="form-group">
+            <img  class="user" src="images/user.png"/>
+            <input type="text" class="form-control" id="username" placeholder="input">
+        </div>
+        <div class="form-group">
+            <img class="password" src="images/password.png"/>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+    </form>
+        <button id="btn3" class="submit1">安全登陆</button>
+    </div>
+</div>
+</div>
+</body>
+<!--</div>-->
+<!--    <button>向页面发送 HTTP POST 请求，并获得返回的结果</button>-->
+<!--</div>-->
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    // 请求登录
+    $(document).ready(function() {
+        $("#btn3").click(function () {
+                    const username = $("#username").val();
+                    console.log(username+'1')
+                    const password = $("#password").val();
+                    console.log(password)
+                //请求参数
+                const list = {password: password, username: username};
+                console.log(list.password);
+                console.log(list.username);
+                $.ajax({
+                    //请求方式
+                    type: "POST",
+                    //请求的媒体类型
+                    contentType: "application/json;charset=UTF-8",
+                    //请求地址
+                    url: "http://localhost:8888/user/login",
+                    //数据，json字符串
+                    data: JSON.stringify(list),
+                    //请求成功
+                    success: function (result) {
+                        console.log(result);
+                        if  (result===1) {
+                            window.location.href="main.html";
+                        }
+
+                    },
+                    //请求失败，包含具体的错误信息
+                    error: function (e) {
+                        console.log(e.status);
+                        console.log(e.responseText);
+                    }
+                });
+        });
+    });
+</script>
+
+</html>

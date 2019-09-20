@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel ="stylesheet" href="css/bootstrap.css" >
+<style>
+    .box1{
+        width: 600px;
+        height: 200px;
+        margin: 30px 30px ;
+       background-color: #d5d5d5;
+    }
+    h3{
+        text-align: center;
+    }
+    .avater{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        left: 40px;
+        border: 3px solid coral;
+        border-radius: 100px;
+        margin: 10px auto;
+    }
+    #btn1{
+        position: relative;
+        top: -30px;
+        left: 40px;
+    }
+    .box2{
+        width: 100px;
+        height: 100px;
+        background-color:palevioletred;
+    }
+    /*table-style*/
+    .table{
+     width: 60%;
+     margin:60px auto ;
+         }
+    .table-header{
+        background-color:coral ;
+        border-radius: 3px 3px 0 0;
+        color: white;
+        font-size: 16px;
+        padding-left: 7px;
+        letter-spacing: 3px;
+    }
+</style>
+<body>
+<!--<div class="box1">-->
+<!--    <h3>修改头像资料</h3>-->
+<!--    <div >-->
+<!--        <img class="avater" src="images/6.jpg"/>-->
+<!--        <button id="btn1">修改头像</button>-->
+<!--    </div>-->
+<!--</div>-->
+<table class="table table-bordered">
+    <caption class="table-header">用户信息管理</caption>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>nickname</th>
+        <th>avatarUrl</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>root</td>
+        <td>admin</td>
+        <td>img/virtual/root.jpg</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>root</td>
+        <td>admin</td>
+        <td>img/virtual/root.jpg</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>root</td>
+        <td>admin</td>
+        <td>img/virtual/root.jpg</td>
+    </tr>
+    </tbody>
+</table>
+<button id="btn1">获取全部信息</button>
+<!--<div class="box2"></div>-->
+<!--<div class="main"></div>-->
+</body>
+<script src="jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="js/bootstrap.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    // // 请求修改头像
+    // $(document).ready(function() {
+    //     $("#btn1").click(function () {
+    //         const username = $("#username").val();
+    //         console.log(username)
+    //
+    //         //请求参数
+    //         const list = {
+    //            username: username
+    //         };
+    //
+    //         $.ajax({
+    //             //请求方式
+    //             type: "POST",
+    //             //请求的媒体类型
+    //             contentType: "multipart/form-data",
+    //             //请求地址
+    //             url: "http://localhost:8888/user/uploadImg?username=root",
+    //             //数据，json字符串
+    //             data: JSON.stringify(list),
+    //             //请求成功
+    //             success: function (result) {
+    //                 console.log(result);
+    //                 if  (result===1) {
+    //                     window.location.href="main.html";
+    //                 }
+    //
+    //             },
+    //             //请求失败，包含具体的错误信息
+    //             error: function (e) {
+    //                 console.log(e.status);
+    //                 console.log(e.responseText);
+    //             }
+    //         });
+    //     });
+    // });
+    // 获取全部信息
+    $(document).ready(function() {
+        $("#btn1").click(function () {
+            $.ajax({
+                //请求方式
+                type: "POST",
+                //请求的媒体类型
+                contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url: "http://localhost:8888/user/selectAll",
+                //数据，json字符串
+                data: "",
+                //请求成功
+                success: function (result) {
+                    console.log(result);
+                },
+                //请求失败，包含具体的错误信息
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
+        });
+    });
+</script>
+</html>
