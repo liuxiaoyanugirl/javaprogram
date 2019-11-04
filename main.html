@@ -1,164 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<link rel ="stylesheet" href="css/bootstrap.css" >
-<style>
-    .box1{
-        width: 600px;
-        height: 200px;
-        margin: 30px 30px ;
-       background-color: #d5d5d5;
-    }
-    h3{
-        text-align: center;
-    }
-    .avater{
-        position: relative;
-        width: 80px;
-        height: 80px;
-        top: 10px;
-        left: 40px;
-        border: 3px solid coral;
-        border-radius: 100px;
-        margin: 10px auto;
-    }
-    #btn1{
-        position: relative;
-        top: -30px;
-        left: 40px;
-    }
-    .box2{
-        width: 100px;
-        height: 100px;
-        background-color:palevioletred;
-    }
-    /*table-style*/
-    .table{
-     width: 60%;
-     margin:60px auto ;
-         }
-    .table-header{
-        background-color:coral ;
-        border-radius: 3px 3px 0 0;
-        color: white;
-        font-size: 16px;
-        padding-left: 7px;
-        letter-spacing: 3px;
-    }
-</style>
-<body>
-<!--<div class="box1">-->
-<!--    <h3>修改头像资料</h3>-->
-<!--    <div >-->
-<!--        <img class="avater" src="images/6.jpg"/>-->
-<!--        <button id="btn1">修改头像</button>-->
-<!--    </div>-->
-<!--</div>-->
-<table class="table table-bordered">
-    <caption class="table-header">用户信息管理</caption>
-    <thead>
-    <tr>
-        <th>id</th>
-        <th>username</th>
-        <th>nickname</th>
-        <th>avatarUrl</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>1</td>
-        <td>root</td>
-        <td>admin</td>
-        <td>img/virtual/root.jpg</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>root</td>
-        <td>admin</td>
-        <td>img/virtual/root.jpg</td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>root</td>
-        <td>admin</td>
-        <td>img/virtual/root.jpg</td>
-    </tr>
-    </tbody>
-</table>
-<button id="btn1">获取全部信息</button>
-<!--<div class="box2"></div>-->
-<!--<div class="main"></div>-->
-</body>
-<script src="jquery.min.js"></script>
-<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-</script>
-<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="js/bootstrap.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Main CSS --> 
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .labelBox{
+            position: absolute;
+            width: 840px;
+            height: 150px;
+            margin-left: 360px;
+            margin-top: 100px;
+            border-radius: 5px;
+            border: 1px solid white;
+        }
+        .avater{
+            position: relative;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 20px;
+            border: 3px solid coral;
+            border-radius: 100px;
+        }
+        .lefPeople{
+            position: relative;
+           left: 600px;
+            top: 6px;
 
-<script>
-    // // 请求修改头像
-    // $(document).ready(function() {
-    //     $("#btn1").click(function () {
-    //         const username = $("#username").val();
-    //         console.log(username)
-    //
-    //         //请求参数
-    //         const list = {
-    //            username: username
-    //         };
-    //
-    //         $.ajax({
-    //             //请求方式
-    //             type: "POST",
-    //             //请求的媒体类型
-    //             contentType: "multipart/form-data",
-    //             //请求地址
-    //             url: "http://localhost:8888/user/uploadImg?username=root",
-    //             //数据，json字符串
-    //             data: JSON.stringify(list),
-    //             //请求成功
-    //             success: function (result) {
-    //                 console.log(result);
-    //                 if  (result===1) {
-    //                     window.location.href="main.html";
-    //                 }
-    //
-    //             },
-    //             //请求失败，包含具体的错误信息
-    //             error: function (e) {
-    //                 console.log(e.status);
-    //                 console.log(e.responseText);
-    //             }
-    //         });
-    //     });
-    // });
-    // 获取全部信息
-    $(document).ready(function() {
-        $("#btn1").click(function () {
-            $.ajax({
-                //请求方式
-                type: "POST",
-                //请求的媒体类型
-                contentType: "application/json;charset=UTF-8",
-                //请求地址
-                url: "http://localhost:8888/user/selectAll",
-                //数据，json字符串
-                data: "",
-                //请求成功
-                success: function (result) {
-                    console.log(result);
-                },
-                //请求失败，包含具体的错误信息
-                error: function (e) {
-                    console.log(e.status);
-                    console.log(e.responseText);
-                }
-            });
-        });
-    });
-</script>
+        }
+        /*小标签*/
+        .label{
+            position: relative;
+            width: 120px;
+            height: 30px;
+            color: white;
+            border-radius: 5px;
+            background-color: #d58512;
+        }
+        .online{
+            position: relative;
+            left: 100px;
+        }
+        .test{
+            position: relative;
+            left: 120px;
+        }
+        .label-little{
+            position: relative;
+            width: 560px;
+            height: 100px;
+            border: 1px solid white;
+            border-radius: 5px;
+            top: -70px;
+            left: 100px;
+        }
+        .join{
+            position: relative;
+            width: 60px;
+            height: 66px;
+            line-height: 66px;
+            color: white;
+            background-color: dodgerblue;
+            border-radius: 100px;
+            left: 630px;
+        }
+        .col-sm-4{
+            margin-left: -10px;
+            margin-top: -70px;
+        }
+        .header-wrap{
+            width: 90%;
+            margin: auto;
+           height: 110px;
+        }
+        .navbar{
+            width: 90%;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+        .col-sm-4{
+            margin-top: 10px;
+        }
+        .mainBox {
+            position: absolute;
+            background: -moz-linear-gradient(top, #FFA500 10%, #fff 100%);
+            background: -webkit-linear-gradient(top,#FFA500 10%, #fff 100%);
+            background: linear-gradient(to bottom, #FFA500 10%, #fff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );
+            width: 90%;
+            left:77px;
+            height: 600px;!important;
+        }
+        .foot{
+            background: -moz-linear-gradient(top, #fff 0%, #FFA500 100%);
+            background: -webkit-linear-gradient(top,#fff 0%, #FFA500 100%);
+            background: linear-gradient(to bottom, #fff 0%, #FFA500 100%);
+            width: 90%;
+            height: 100px;
+            margin: auto;
+        }
+        .line{
+            width: 420px;
+            height:  1px;
+            background-color: whitesmoke;
+        }
+        .form-control{
+            border-radius: 5px;
+            width: 300px;
+        }
+        .text-center{
+            margin-top:200px;
+        }
+        .img{
+            height: 100px;
+            width: 100px;
+            margin-top: -40px;
+            margin-left: 30px;
+            border: 2px solid white;
+            border-radius: 100px;
+        }
+        .list-group{
+            width: 200px;
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        .signature{
+            width: 200px;
+            height: 2px;
+            color: black;
+            border: 1px solid white;
+            margin-left: 30px;
+        }
+        .navbar-site{
+            position: relative;
+            width: 60%;
+            top: 60px;
+            left: 370px;
+            border: 1px solid white;
+        }
+    </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="header-wrap d-none d-md-block">
+            <div class="container">
+                <div class="row">
+                    
+                    <!-- Left header box -->
+                    <header class="col-6 text-left">
+                        <h1>湖 北 大 学 内 部 贴 吧</h1>
+                    </header>
+
+                    <!-- Right header box -->
+                    <div class="col-6 text-right">
+                        <p class="header-social-icons social-icons">
+                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                            <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main content area -->
+        <div class="mainBox">
+            <!-- Main navigation -->
+            <div class="navbar-site">
+            <nav class=" navbar-expand-md navbar-dark bg-primary">
+                <div>
+                    <!-- Main navigation items -->
+                    <div>
+                        <ul class="navbar-nav mr-auto">
+                            <li>
+                                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link "href="#" >组队学习</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">吃喝玩乐</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">湖大趣闻</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">课程讲座</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            </div>
+            <!-- Main content -->
+                <div class="col-sm-8">
+                    <div class="main">
+
+                       <div class="labelBox">
+                            <span class="label online">线上</span>
+                            <span class="label test">考研</span>
+                            <div >
+                                <img class="avater" src="images/6.jpg"/>
+                            </div>
+                            <div class="label-little">
+                            <div class="join">
+                                join!
+                            </div>
+                            <p class="lefPeople">剩余人数3/5</p>
+                        </div>
+                        </div>
+                       <div class="labelBox" style="margin-top: 245px">
+                                <span class="label online">线上</span>
+                                <span class="label test">考研</span>
+                               <div class="line"></div>
+                                <div >
+                                    <img class="avater" src="images/6.jpg"/>
+                                </div>
+                                <div class="label-little">
+                                    <div class="join">
+                                        join!
+                                    </div>
+                                    <p class="lefPeople">剩余人数3/5</p>
+                                </div>
+                            </div>
+                       <div class="labelBox" style="margin-top: 400px">
+                            <span class="label online">线上</span>
+                            <span class="label test">考研</span>
+                            <div class="line"></div>
+                            <div >
+                                <img class="avater" src="images/6.jpg"/>
+                            </div>
+                            <div class="label-little">
+                                <div class="join">
+                                    join!
+                                </div>
+                                <p class="lefPeople">剩余人数3/5</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!-- Sidebar -->
+                <aside class="col-sm-4">
+                    <div class="sidebar-box">
+                        <img class="img" src="images/6.jpg"><span style="color: black">艾克宾利</span><br>
+                        <span class="signature">   不学好英语不改签名。。。</span>
+                        <div class="list-group list-group-root">
+                            <a class="list-group-item" href="index.html">发布组队</a>
+                            <a class="list-group-item" href="examples.html">我的组队</a>
+                            <a class="list-group-item" href="three-column.html">个人信息</a>
+                            <a class="list-group-item" href="one-column.html">进入聊天</a>
+                            <a class="list-group-item" href="three-column.html">个人信息</a>
+                            <a class="list-group-item" href="one-column.html">了解更多</a>
+                    </div>
+                    </div>
+                </aside> 
+                
+                </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="foot" >
+           <p class="text-center"><a href="#">返回顶部</a></p>
+            </div>
+            
+        </footer>
+    </body>
 </html>
