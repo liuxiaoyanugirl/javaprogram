@@ -1,14 +1,62 @@
 <!doctype html>
 <html lang="en">
 	<head>
-        <title>Home</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Main CSS --> 
-        <link rel="stylesheet" href="css/style.css">
-        <!-- Font Awesome -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- Main CSS -->
     <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*标题样式*/
+        .heaBac{
+            width: 90%;
+            height: 100px;
+            border: 1px solid black;
+            margin: auto;
+        }
+        /*主盒子*/
+        .mainBox {
+            position: absolute;
+            width:89%;
+            left: 82px;
+            height: 600px;
+            background: -moz-linear-gradient(top, #FFA500 10%, #fff 100%);
+            background: -webkit-linear-gradient(top,#FFA500 10%, #fff 100%);
+            background: linear-gradient(to bottom, #FFA500 10%, #fff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );
+        }
+        /*主导航*/
+        .MainNavigation{
+            position: relative;
+            width: 60%;
+            height: 50px;
+            top: 60px;
+            left: 370px;
+            border: 1px solid white;
+        }
+        .MainNavigation ul {
+            list-style: none;
+        }
+        .MainNavigation ul li{
+            width: 12%;
+            height: 40px;
+            float: left;
+            font-size: 20px;
+            color: white;
+            background-color: blanchedalmond;
+        }
+        .nav-link{
+            text-decoration:none;
+        }
+        /*头部样式*/
+        .text-left{
+            width: 90%;
+            margin: auto;
+            height: 110px;
+            border: 1px solid black;
+        }
+        /*标签盒子*/
         .labelBox{
             position: absolute;
             width: 840px;
@@ -18,6 +66,7 @@
             border-radius: 5px;
             border: 1px solid white;
         }
+        /*标签内头像*/
         .avater{
             position: relative;
             width: 80px;
@@ -27,13 +76,7 @@
             border: 3px solid coral;
             border-radius: 100px;
         }
-        .lefPeople{
-            position: relative;
-           left: 600px;
-            top: 6px;
-
-        }
-        /*小标签*/
+        /*标签内小标签*/
         .label{
             position: relative;
             width: 120px;
@@ -42,14 +85,7 @@
             border-radius: 5px;
             background-color: #d58512;
         }
-        .online{
-            position: relative;
-            left: 100px;
-        }
-        .test{
-            position: relative;
-            left: 120px;
-        }
+        /*标签内介绍框*/
         .label-little{
             position: relative;
             width: 560px;
@@ -58,6 +94,11 @@
             border-radius: 5px;
             top: -70px;
             left: 100px;
+        }
+        .line{
+            width: 420px;
+            height:  1px;
+            background-color: whitesmoke;
         }
         .join{
             position: relative;
@@ -69,133 +110,106 @@
             border-radius: 100px;
             left: 630px;
         }
-        .col-sm-4{
-            margin-left: -10px;
-            margin-top: -70px;
+        .online{
+            position: relative;
+            left: 100px;
         }
-        .header-wrap{
-            width: 90%;
-            margin: auto;
-           height: 110px;
+        .test{
+            position: relative;
+            left: 120px;
         }
-        .navbar{
-            width: 90%;
-            margin: 20px auto;
+        .lefPeople{
+            position: relative;
+            left: 600px;
+            top: 6px;
+
+        }
+        /*侧边样式*/
+        .sidebar-box {
+            position: absolute;
+            width: 20%;
+            height: 500px;
+            left: 30px;
+            top: 0;
             border: 1px solid black;
         }
-        .col-sm-4{
-            margin-top: 10px;
-        }
-        .mainBox {
-            position: absolute;
-            background: -moz-linear-gradient(top, #FFA500 10%, #fff 100%);
-            background: -webkit-linear-gradient(top,#FFA500 10%, #fff 100%);
-            background: linear-gradient(to bottom, #FFA500 10%, #fff 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );
-            width: 90%;
-            left:77px;
-            height: 600px;!important;
-        }
-        .foot{
-            background: -moz-linear-gradient(top, #fff 0%, #FFA500 100%);
-            background: -webkit-linear-gradient(top,#fff 0%, #FFA500 100%);
-            background: linear-gradient(to bottom, #fff 0%, #FFA500 100%);
-            width: 90%;
-            height: 100px;
-            margin: auto;
-        }
-        .line{
-            width: 420px;
-            height:  1px;
-            background-color: whitesmoke;
-        }
-        .form-control{
-            border-radius: 5px;
-            width: 300px;
-        }
-        .text-center{
-            margin-top:200px;
-        }
-        .img{
+        .user {
             height: 100px;
             width: 100px;
-            margin-top: -40px;
-            margin-left: 30px;
+            margin-top: 5px;
+            margin-left: 40px;
             border: 2px solid white;
             border-radius: 100px;
         }
-        .list-group{
-            width: 200px;
-            margin-left: 30px;
-            margin-top: 10px;
+        .nickName{
+            position: relative;
+            top: -40px;
+            left: 3px;
         }
         .signature{
-            width: 200px;
-            height: 2px;
+            display: block;
             color: black;
-            border: 1px solid white;
-            margin-left: 30px;
+            margin-left: 5px;
         }
-        .navbar-site{
+        .list-group{
             position: relative;
-            width: 60%;
-            top: 60px;
-            left: 370px;
+            width: 80%;
+            height: 246px;
+            top: 20px;
+            left: 10px;
             border: 1px solid white;
         }
+         .list-group .list-group-item{
+             text-decoration: none;
+             display: block;
+             position: relative;
+             width: 100%;
+             height: 40px;
+             line-height: 40px;
+             text-align: center;
+             font-size: 20px;
+             color: black;
+        }
+         .list-group-item:hover{
+             background-color: whitesmoke;
+         }
+        .list-line {
+            position: relative;
+            width: 220px;
+            height: 1px;
+            background-color: white;
+        }
+
     </style>
     </head>
     <body>
-        <!-- Header -->
-        <div class="header-wrap d-none d-md-block">
-            <div class="container">
-                <div class="row">
-                    
-                    <!-- Left header box -->
-                    <header class="col-6 text-left">
-                        <h1>湖 北 大 学 内 部 贴 吧</h1>
-                    </header>
-
-                    <!-- Right header box -->
-                    <div class="col-6 text-right">
-                        <p class="header-social-icons social-icons">
-                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                            <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
-                            <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Header content area -->
+    <div class="heaBac">
+     <div>
+      <h1>湖 北 大 学 学 习 交 友 贴 吧</h1>
+     </div>
+    </div>
         <!-- Main content area -->
-        <div class="mainBox">
+     <div class="mainBox">
             <!-- Main navigation -->
-            <div class="navbar-site">
-            <nav class=" navbar-expand-md navbar-dark bg-primary">
-                <div>
-                    <!-- Main navigation items -->
-                    <div>
-                        <ul class="navbar-nav mr-auto">
-                            <li>
-                                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link "href="#" >组队学习</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">吃喝玩乐</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">湖大趣闻</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">课程讲座</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <div class="MainNavigation">
+            <ul>
+                <li>
+                    <a class="nav-link" href="index.html">主页</a>
+                </li>
+                <li >
+                    <a class="nav-link" href="#" >组队学习</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">吃喝玩乐</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">湖大趣闻</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#">课程讲座</a>
+                </li>
+            </ul>
             </div>
             <!-- Main content -->
                 <div class="col-sm-8">
@@ -245,29 +259,25 @@
                     </div>
                 
                 <!-- Sidebar -->
-                <aside class="col-sm-4">
                     <div class="sidebar-box">
-                        <img class="img" src="images/6.jpg"><span style="color: black">艾克宾利</span><br>
-                        <span class="signature">   不学好英语不改签名。。。</span>
-                        <div class="list-group list-group-root">
+                        <img class="user" src="images/6.jpg"><span class="nickName">艾克宾利</span>
+                        <span class="signature">不学好英语不改个性签名</span>
+                        <div class="list-group">
                             <a class="list-group-item" href="index.html">发布组队</a>
-                            <a class="list-group-item" href="examples.html">我的组队</a>
-                            <a class="list-group-item" href="three-column.html">个人信息</a>
-                            <a class="list-group-item" href="one-column.html">进入聊天</a>
-                            <a class="list-group-item" href="three-column.html">个人信息</a>
-                            <a class="list-group-item" href="one-column.html">了解更多</a>
+                            <div class="list-line"></div>
+                            <a class="list-group-item" href="#">我的组队</a>
+                            <div class="list-line"></div>
+                            <a class="list-group-item" href="#">个人信息</a>
+                            <div class="list-line"></div>
+                            <a class="list-group-item" href="#">进入聊天</a>
+                            <div class="list-line"></div>
+                            <a class="list-group-item" href="#">个人信息</a>
+                            <div class="list-line"></div>
+                            <a class="list-group-item" href="#">了解更多</a>
                     </div>
                     </div>
-                </aside> 
                 
                 </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="foot" >
-           <p class="text-center"><a href="#">返回顶部</a></p>
-            </div>
-            
-        </footer>
     </body>
 </html>
