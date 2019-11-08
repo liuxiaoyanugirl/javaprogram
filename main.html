@@ -25,9 +25,10 @@
             width:89%;
             left: 82px;
             height: 600px;
-            background: -moz-linear-gradient(top, lightblue 10%, #fff 100%);
-            background: -webkit-linear-gradient(top,lightblue 10%, #fff 100%);
-            background: linear-gradient(to bottom, lightblue 10%, #fff 100%);
+            border-radius: 10px;
+            /*background: -moz-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
+            /*background: -webkit-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
+            background: linear-gradient(to top, #fff -40%, lightblue 140%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );
         }
         /*主导航*/
@@ -68,6 +69,7 @@
         .main{
             width: 820px;
             height: 400px;
+            border-radius: 10px;
             border: 2px solid white;
             overflow-y: scroll;
             overflow-x:hidden;
@@ -198,6 +200,7 @@
             height: 400px;
             top: 140px;
             left: 1160px;
+            border-radius: 10px;
             border: 1px solid white;
         }
         .public-head{
@@ -246,6 +249,33 @@
             top: -20px;
             left: 40px;
             color: #d5d5d5
+        }
+        /*滚动条样式*/
+        /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+        ::-webkit-scrollbar
+        {
+            width: 10px;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+
+        /*定义滚动条轨道 内阴影+圆角*/
+        ::-webkit-scrollbar-track
+        {
+            border-radius: 10px;
+            background-color:transparent ;
+        }
+
+        /*定义滑块 内阴影+圆角*/
+        ::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: lightblue;
+        }
+        /*定义最上方和最下方的按钮*/
+        ::-webkit-scrollbar-button{
+            border-radius: 10px;
+            background-color: transparent;
         }
     </style>
     </head>
