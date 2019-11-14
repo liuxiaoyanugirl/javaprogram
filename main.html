@@ -22,8 +22,8 @@
         /*主盒子*/
         .mainBox {
             position: absolute;
-            width:89%;
-            left: 82px;
+            width:80%;
+            left: 150px;
             height: 600px;
             border-radius: 10px;
             /*background: -moz-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
@@ -73,7 +73,7 @@
             border: 2px solid white;
             overflow-y: scroll;
             overflow-x:hidden;
-            margin: 90px 240px;
+            margin: 90px 160px;
         }
         .labelBox{
             width: 780px;
@@ -112,11 +112,6 @@
             top: -78px;
             left: 100px;
         }
-        .line{
-            width: 420px;
-            height:  1px;
-            background-color: whitesmoke;
-        }
         .join{
             position: relative;
             width: 16px;
@@ -140,37 +135,43 @@
         /*侧边样式*/
         .sidebar-box {
             position: absolute;
-            width: 18%;
+            width: 14%;
             height: 500px;
-            left: 10px;
-            top: -16px;
+            left: 6px;
+            top: -60px
            
         }
         .user {
             height: 100px;
             width: 100px;
             margin-top: 5px;
-            margin-left: 40px;
+            margin-left: 20px;
             border: 2px solid white;
             border-radius: 100px;
         }
         .nickName{
             position: relative;
-            top: -40px;
-            left: 3px;
+            top: 5px;
+            left: 36px;
+            border-radius: 3px;
+            border: 1px solid white;
         }
-        .signature{
+        .signature {
+            position: relative;
+            width: 96%;
             display: block;
             color: black;
-            margin-left: 5px;
+            top: 10px;
+            left: 5px;
+
         }
         .list-group{
             position: relative;
             width: 80%;
             height: 246px;
-            top: 20px;
+            top: 44px;
             left: 10px;
-            border: 1px solid white;
+            background-color: whitesmoke;
             border-radius: 5px;
         }
          .list-group .list-group-item{
@@ -185,21 +186,21 @@
              color: black;
         }
          .list-group-item:hover{
-             background-color: whitesmoke;
+             background-color:lightcyan;
          }
         .list-line {
             position: relative;
-            width: 160px;
+            width: 134px;
             height: 1px;
             background-color: white;
         }
       /*发布框*/
         .public-box{
             position: relative;
-            width: 16%;
+            width: 13%;
             height: 400px;
             top: 140px;
-            left: 1160px;
+            left: 1144px;
             border-radius: 10px;
             border: 1px solid white;
         }
@@ -207,48 +208,37 @@
             width: 100%;
             height: 12%;
         }
-        .public-body{
-            width: 90%;
-            height: 56%;
-             color: #d5d5d5;
-            background-color: seashell;
-            border: 1px solid black;
-            margin: 38px auto;
-        }
-        .pbody-1{
-            width: 90%;
-            height: 14%;
-            margin: 0 auto;
-            border: 1px solid black;
-        }
         .phead-1{
-            width: 80px;
+            width: 100px;
             margin: 8px 8px;
             color: black;
         }
         .phead-2 {
             width: 80px;
-            margin: 8px 8px;
+            margin: 8px 0;
             color:dodgerblue;
         }
         .phead-3{
             position: relative;
-            width: 180px;
+            width: 140px;
             left: 40px;
             top: -20px;
-
+            color: #d5d5d5;
         }
+
         .phead-4{
             width: 80px;
-            margin: -22px 8px;
+            margin: 6px 0 0 0;
             color:dodgerblue;
         }
-        .phead-5{
-            position: relative;
-            width: 184px;
-            top: -20px;
-            left: 40px;
-            color: #d5d5d5
+        .btn-1{
+            width: 60px;
+            height: 30px;
+            color: black;
+            margin-top: 310px;
+            margin-left: 120px;
+            background-color:lightblue;
+            border-radius: 5px;
         }
         /*滚动条样式*/
         /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
@@ -283,7 +273,7 @@
     <!-- Header content area -->
     <div class="heaBac">
      <div>
-      <h1>supater 学 习 交 友 社 区</h1>
+      <h1 style="color: #d5d5d5">supater 学 习 交 友 社 区</h1>
      </div>
     </div>
         <!-- Main content area -->
@@ -411,8 +401,9 @@
                 
                 <!-- Sidebar -->
                     <div class="sidebar-box">
-                        <img class="user" src="images/6.jpg"><span class="nickName">艾克宾利</span>
-                        <span class="signature">不学好英语不改个性签名</span>
+                        <img class="user" src="images/6.jpg">   <br>
+                        <span class="nickName">艾克宾利</span>
+                        <span class="signature">  不学好英语不改签名</span>
                         <div class="list-group">
                             <a class="list-group-item" href="index.html">发布组队</a>
                             <div class="list-line"></div>
@@ -433,24 +424,27 @@
 <!--    public content area-->
     <div class="public-box">
                 <div class="public-head" >
-                    <p class="phead-1" >发布组队</p>
-                    <p class="phead-2" >标题: <input class="phead-3" placeholder="请输入标题"/>  </p>
-                    <p class="phead-4" >标签: <select class="phead-5" property="请选择标签">
-
-                        <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
-                          <option value="saab">期末复习</option>
-                          <option value="opel">线上学习</option>
-                          <option value="audi">线下学习</option>
-                        
+                    <p class="phead-1" >发布组队信息</p>
+                    <p class="phead-2" >标题: <input class="phead-3" placeholder="请输入"/>  </p>
+                    <p class="phead-4" >时间:<input class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >地点: <input class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >备注: <input class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >模式: <select class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="volvo">线上学习</option>
+                        <option value="audi">线下学习</option>
+                    </select> </p>
+                    <p class="phead-4" >标签: <select class="phead-3" property="请选择标签">
+                    <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
+                    <option value="saab">期末复习</option>
+                </select>  </p>
+                    <p class="phead-4" >人数: <select class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="volvo">最多2人</option>
+                        <option value="saab">最多3人</option>
+                        <option value="opel">最多4人</option>
+                        <option value="audi">最多5人</option>
                     </select>  </p>
-
                 </div>
-        <div class="public-body">
-<!--            <div class="pbody-1">-->
-<!--                -->
-<!--            </div>-->
-           <p>来说点什么吧。。。。。。。</p>
-        </div>
+        <button class="btn-1">发布</button>
     </div>
     </body>
     <script src="jquery.min.js"></script>
