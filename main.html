@@ -5,8 +5,9 @@
 <!-- Main CSS -->
     <style>
         body{
-
-              background-color: lightcyan;
+            width: 900px;
+            height: 880px;
+            background: url("images/bcg.jpg") no-repeat;
 
         }
         *{
@@ -28,8 +29,8 @@
             border-radius: 10px;
             /*background: -moz-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
             /*background: -webkit-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
-            background: linear-gradient(to top, #fff -40%, lightblue 140%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );
+            /*background: linear-gradient(to top, #fff -40%, lightblue 140%);*/
+            /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );*/
         }
         /*主导航*/
         .MainNavigation{
@@ -38,8 +39,10 @@
             height: 50px;
             top: 60px;
             left: 280px;
+
         }
         .MainNavigation ul {
+
             list-style: none;
         }
         .nav-link{
@@ -52,6 +55,8 @@
             color:black;
             font-size: 20px;
             text-decoration:none;
+            border-radius: 5px;
+            border: 1px solid lightblue;
         }
         .nav-link:hover{
             border: 1px solid black;
@@ -197,7 +202,7 @@
       /*发布框*/
         .public-box{
             position: relative;
-            width: 13%;
+            width: 200px;
             height: 400px;
             top: 140px;
             left: 1144px;
@@ -426,23 +431,24 @@
                 <div class="public-head" >
                     <p class="phead-1" >发布组队信息</p>
                     <p class="phead-2" >标题: <input class="phead-3" placeholder="请输入"/>  </p>
-                    <p class="phead-4" >时间:<input class="phead-3" placeholder="请输入"/> </p>
-                    <p class="phead-4" >地点: <input class="phead-3" placeholder="请输入"/> </p>
-                    <p class="phead-4" >备注: <input class="phead-3" placeholder="请输入"/> </p>
                     <p class="phead-4" >模式: <select class="phead-3" property="请选择标签">
                         <option style="color: #d5d5d5" value="volvo">线上学习</option>
                         <option value="audi">线下学习</option>
                     </select> </p>
                     <p class="phead-4" >标签: <select class="phead-3" property="请选择标签">
-                    <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
-                    <option value="saab">期末复习</option>
-                </select>  </p>
+                        <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
+                        <option value="saab">期末复习</option>
+                    </select>  </p>
                     <p class="phead-4" >人数: <select class="phead-3" property="请选择标签">
                         <option style="color: #d5d5d5" value="volvo">最多2人</option>
                         <option value="saab">最多3人</option>
                         <option value="opel">最多4人</option>
                         <option value="audi">最多5人</option>
                     </select>  </p>
+                    <p class="phead-4" >时间:<input class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >地点: <input class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >备注: <input class="phead-3" placeholder="请输入"/> </p>
+
                 </div>
         <button class="btn-1">发布</button>
     </div>

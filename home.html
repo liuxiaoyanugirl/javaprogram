@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+<!-- Main CSS -->
+    <style>
+        body{
+            /*background: url("images/bcg1.jpg") no-repeat;*/
+      background-color: #5bc0de;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*标题样式*/
+        .heaBac{
+            width: 66%;
+            height: 180px;
+            margin: auto;
+            background-color: #5cb85c;
+        }
+        /*主盒子*/
+        .mainBox {
+            position: absolute;
+            width:66%;
+            top: 220px;
+            left: 260px;
+            height: 600px;
+            border-radius: 10px;
+            background-color: whitesmoke;
+        }
+        /*主导航*/
+        .headBox{
+            position: relative;
+            width:100%;
+            height: 140px;
+            border: 1px solid black;
+
+        }
+        .avater{
+            position: relative;
+            width: 140px;
+            height: 140px;
+            top: -40px;
+            left: 20px;
+            border: 4px solid lightskyblue;
+            border-radius: 5px;
+        }
+        .text{
+            position: relative;
+            width: 200px;
+            height: 100px;
+            top: -140px;
+            left: 180px;
+            border: 1px solid black;
+        }
+        .giftBox{
+            position: relative;
+            width: 20%;
+            height: 50px;
+            top: 300px;
+            left: 280px;
+            background-color: red;
+        }
+    </style>
+    </head>
+    <body>
+    <!-- Header content area -->
+    <div class="heaBac">
+    </div>
+
+        <!-- Main content area -->
+     <div class="mainBox">
+         <div class="headBox">
+             <div class="avater"></div>
+
+             <div class="text">
+                 <button>编辑资料</button>
+                 <p>花回louisa</p>
+                 <p>男</p>
+             </div>
+         </div>
+         <div class="giftBox"></div>
+        </div>
+    </body>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#main").scroll(200);
+            console.log(1)
+        });
+    </script>
+</html>
