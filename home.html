@@ -5,8 +5,7 @@
 <!-- Main CSS -->
     <style>
         body{
-            /*background: url("images/bcg1.jpg") no-repeat;*/
-      background-color: #5bc0de;
+            background: url("images/dahai2.png") no-repeat;
         }
         *{
             padding: 0;
@@ -15,27 +14,24 @@
         /*标题样式*/
         .heaBac{
             width: 62%;
-            height: 180px;
+            height: 220px;
             margin: auto;
-            background-color: #5cb85c;
+            background: url("images/dahai1.png") no-repeat;
         }
         /*主盒子*/
         .mainBox {
             position: absolute;
             width:62%;
-            top: 220px;
+            top: 250px;
             left: 290px;
             height: 600px;
-            border-radius: 10px;
-            background-color: whitesmoke;
+            background-color: #F8F8F8;
         }
         /*主导航*/
         .headBox{
             position: relative;
             width:100%;
             height: 140px;
-            border: 1px solid black;
-
         }
         .avater{
             position: relative;
@@ -52,27 +48,24 @@
             height: 100px;
             top: -140px;
             left: 180px;
-            border: 1px solid black;
         }
         .giftBox{
             position: relative;
             width: 24%;
             height: 400px;
-            top: -82px;
-            left: 716px;
-            background-color: lightgrey;
+            top: -137px;
+            left: 715px;
+            background-color: #E8E8E8;
         }
         .mainHead{
             position: relative;
             width: 76%;
             height: 50px;
-            background-color: #CCCCCC;
-        }
-        .mainHead ul {
-
             list-style: none;
+            background-color: #E8E8E8;
         }
         .nav-link{
+            position: relative;
             display: block;
             width: 16%;
             height: 50px;
@@ -82,13 +75,18 @@
             color:black;
             font-size: 20px;
             text-decoration:none;
-            border-radius: 5px;
-            border-right: 1px solid lightblue;
+            border-right: 1px solid #D8D8D8;
+        }
+        ul li a{
+            text-decoration:none;
         }
         .nav-link:hover{
-            border: 1px solid black;
-            border-radius: 5px;
             background-color: whitesmoke;
+        }
+        img{
+            position: relative;
+            top: 9px;
+            left: -5px;
         }
     </style>
     </head>
@@ -96,11 +94,12 @@
     <!-- Header content area -->
     <div class="heaBac">
     </div>
-
         <!-- Main content area -->
      <div class="mainBox">
          <div class="headBox">
-             <div class="avater"></div>
+             <div >
+                 <img class="avater" src="images/tx.jpg"/>
+             </div>
 
              <div class="text">
                  <button>编辑资料</button>
@@ -108,19 +107,47 @@
                  <p>男</p>
              </div>
          </div>
-         <div class="mainHead">
-             <ul>
-                 <li>
-                     <a class="nav-link" href="index.html">主页</a>
-                     <a class="nav-link" href="#" >组队学习</a>
-                     <a class="nav-link" href="#">吃喝玩乐</a>
-                     <a class="nav-link" href="#">湖大趣闻</a>
-                     <a class="nav-link" href="#">课程讲座</a>
+         <div>
+             <ul  class="mainHead">
+                 <li  class="nav-link">
+                     <img src="images/user.png"/>
+                     <a href="index.html">主页</a>
+                 </li>
+                 <li  class="nav-link">
+                     <img src="images/user.png"/>
+                     <a href="index.html">主页</a>
+                 </li>
+                 <li  class="nav-link">
+                     <img src="images/user.png"/>
+                     <a href="index.html">主页</a>
+                 </li>
+                 <li  class="nav-link">
+                                          <img src="images/user.png"/>
+                     <a href="index.html">主页</a>
+                 </li>
+                 <li  class="nav-link">
+                                          <img src="images/user.png"/>
+                     <a href="index.html">主页</a>
                  </li>
              </ul>
+             <div class="mainBody">
+                 <div><p>我的关注</p>
+                     <button style="margin: 0 420px">一键签到</button>
+                     <button>一起来通宵自习吧</button>
+                     <button>唱k</button>
+                 </div>
+                 <div>
+                   <h4> ||  我的帖子</h4>
+                 </div>
+             </div>
+
          </div>
-         <div class="giftBox"></div>
+         <div class="giftBox">
+             <p>我的礼物</p>
+             <p>我关注的人</p>
+         </div>
         </div>
+   
     </body>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
