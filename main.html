@@ -121,7 +121,7 @@
             position: relative;
             width: 16px;
             height: 16px;
-            top: 10px;
+            top: -10px;
             left: 600px;
         }
         .online{
@@ -287,7 +287,7 @@
             <div class="MainNavigation">
             <ul>
                 <li>
-                <a class="nav-link" href="index.html">主页</a>
+                <a class="nav-link" href="home.html">我的主页</a>
                 <a class="nav-link" href="#" >组队学习</a>
                 <a class="nav-link" href="#">吃喝玩乐</a>
                 <a class="nav-link" href="#">湖大趣闻</a>
@@ -305,6 +305,9 @@
                                 <img class="avater" src="images/tx.jpg"/>
                             </div>
                             <div class="label-little">
+                                <p id="title0" style="background-color: #4cae4c"></p>
+                                <span id="part01"></span> <span id="part02"> </span> <span id="part03"> </span><span id="part04"></span><span id="part05"></span>
+                                <p id="remark0" style="background-color: #4cae4c"></p>
                             <div class="join">
                                 <img  src="images/join.png"/>
                             </div>
@@ -317,12 +320,15 @@
                             <div >
                                 <img class="avater" src="images/tx.jpg"/>
                             </div>
-                            <div class="label-little">
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
+                           <div class="label-little">
+                               <p id="title1" style="background-color: #4cae4c"></p>
+                               <span id="part11"></span> <span id="part12"> </span> <span id="part13"> </span><span id="part14"></span><span id="part15"></span>
+                               <p id="remark1" style="background-color: #4cae4c"></p>
+                               <div class="join">
+                                   <img  src="images/join.png"/>
+                               </div>
+                               <p class="lefPeople">剩余人数3/5</p>
+                           </div>
                         </div>
                         <div class="labelBox">
                             <span class="label online">线上</span>
@@ -331,45 +337,9 @@
                                 <img class="avater" src="images/tx.jpg"/>
                             </div>
                             <div class="label-little">
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
-                        </div>
-                        <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
-                        </div>
-                        <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
-                        </div>
-                        <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
+                                <p id="title2" style="background-color: #4cae4c"></p>
+                                <span id="part21"></span> <span id="part22"> </span> <span id="part23"> </span><span id="part24"></span><span id="part25"></span>
+                                <p id="remark2" style="background-color: #4cae4c"></p>
                                 <div class="join">
                                     <img  src="images/join.png"/>
                                 </div>
@@ -407,7 +377,7 @@
                 <!-- Sidebar -->
                     <div class="sidebar-box">
                         <img class="user" src="images/tx.jpg">   <br>
-                        <span class="nickName">艾克宾利</span>
+                        <span id="aa" class="nickName"></span>
                         <span class="signature">  不学好英语不改签名</span>
                         <div class="list-group">
                             <a class="list-group-item" href="index.html">发布组队</a>
@@ -430,57 +400,131 @@
     <div class="public-box">
                 <div class="public-head" >
                     <p class="phead-1" >发布组队信息</p>
-                    <p class="phead-2" >标题: <input class="phead-3" placeholder="请输入"/>  </p>
-                    <p class="phead-4" >模式: <select class="phead-3" property="请选择标签">
-                        <option style="color: #d5d5d5" value="volvo">线上学习</option>
-                        <option value="audi">线下学习</option>
+                    <p class="phead-2" >标题: <input id="actionName" class="phead-3" placeholder="请输入"/>  </p>
+                    <p class="phead-4" >模式: <select id="type" class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="1">线下学习</option>
+                        <option value="2">线上学习</option>
                     </select> </p>
-                    <p class="phead-4" >标签: <select class="phead-3" property="请选择标签">
+                    <p class="phead-4" >标签: <select id="label" class="phead-3" property="请选择标签">
                         <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
                         <option value="saab">期末复习</option>
                     </select>  </p>
-                    <p class="phead-4" >人数: <select class="phead-3" property="请选择标签">
-                        <option style="color: #d5d5d5" value="volvo">最多2人</option>
-                        <option value="saab">最多3人</option>
-                        <option value="opel">最多4人</option>
-                        <option value="audi">最多5人</option>
+                    <p class="phead-4" >人数: <select id="maxMember" class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="2">最多2人</option>
+                        <option value="3">最多3人</option>
+                        <option value="4">最多4人</option>
+                        <option value="5">最多5人</option>
                     </select>  </p>
-                    <p class="phead-4" >时间:<input class="phead-3" placeholder="请输入"/> </p>
-                    <p class="phead-4" >地点: <input class="phead-3" placeholder="请输入"/> </p>
-                    <p class="phead-4" >备注: <input class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >时间:<input id="time" class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >地点: <input id="site" class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >备注: <input id="ps" class="phead-3" placeholder="请输入"/> </p>
 
                 </div>
         <button class="btn-1">发布</button>
     </div>
     </body>
     <script src="jquery.min.js"></script>
+    <script src="jquery.cookie.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             //滚动条方法
             $("#main").scroll(200);
             //掉用后台接口
-            // function init(){//按钮点击
-            //     $.ajax({
-            //         type: "GET",
-            //         url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
-            //         data: {username:$("#username").val(), content:$("#root").val()}, //调用时的参数
-            //         dataType: "json",//返回json,text,html你自己定
-            //         success: function(data){//成功
-            //             console.log(data)
-            //             // $('#resText').empty();   //清空resText里面的所有内容
-            //             // var html = '';
-            //             // $.each(data, function(commentIndex, comment){
-            //             //     html += '<div class="comment"><h6>' + comment['username']
-            //             //         + ':</h6><p class="para"' + comment['content']
-            //             //         + '</p></div>';
-            //             // });
-            //             // $('#resText').html(html);
-            //         }
-            //     });
-            // };
-            // init();    // 调用
-            //两页面传值
-            console.log(window.localStorage.name);
+            function init(){
+                //显示个人信息
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8888/userInfo/getUserInfo?username=root", //这里写接口地址，
+                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    dataType: "json",//返回json
+                    success: function(data){//成功
+                        $('.signature').html(data.personalizedSignature);
+                    }
+                });
+                //显示全部组队信息
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8888/studyInfo/getStudyInfo?username=root&pageNum=1&pageSize=10", //这里写接口地址，
+                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    dataType: "json",//返回json
+                    success: function(data){//成功
+                        $('#title0').html(data.list[0].actionName );
+                        $('#part01').html(data.list[0].userSchool );
+                        $('#part02').html(data.list[0].site );
+                        $('#part03').html(data.list[0].time   );
+                        $('#part04').html(data.list[0].type   );
+                        $('#part05').html(data.list[0].label   );
+                        $('#remark0').html(data.list[0].ps);
+
+                        $('#title1').html(data.list[1].actionName);
+                        $('#part11').html(data.list[1].userSchool );
+                        $('#part12').html(data.list[1].site );
+                        $('#part13').html(data.list[1].time   );
+                        $('#part14').html(data.list[1].type   );
+                        $('#part15').html(data.list[1].label   );
+                        $('#remark1').html(data.list[1].ps);
+
+                        $('#title2').html(data.list[2].actionName);
+                        $('#part21').html(data.list[2].userSchool );
+                        $('#part22').html(data.list[2].site );
+                        $('#part23').html(data.list[2].time   );
+                        $('#part24').html(data.list[2].type   );
+                        $('#part25').html(data.list[2].label   );
+                        $('#remark2').html(data.list[2].ps);
+                    }
+                });
+
+            };
+            init();    // 调用
+            //主页面取值
+            $(function(){
+                var username = $.cookie('username');//获取存储的cookie
+                // console.log(username);
+                $('#aa').html(username);//打印到页面上
+                //发布组队信息
+                $(".btn-1").click(function(){
+                    const actionName = $("#actionName").val();
+                    const label = $("#label").val();
+                    const maxMember = $("#maxMember").val();
+                    const ps = $("#ps").val();
+                    const site = $("#site").val();
+                    const time = $("#time").val();
+                    const type = $("#type").val();
+                    const userSchool = $("#userSchool").val();
+                    //请求参数
+                    const StudyInfo = {
+                        username: "root",
+                        userSchool: "湖北大学",
+                        actionName: actionName,
+                        type: type,
+                        label: label,
+                        time:time,
+                        site: site,
+                        maxMember: 0,
+                        leftSize: -1,
+                        date: "2019-12-27",
+                        ps: ps,
+                        valid: 1
+                    };
+                    $.ajax({
+                        type: "PUT",
+                        dataType: 'json',
+                        contentType: "application/json",//返回json
+                        url: "http://localhost:8888/studyInfo/insert", //这里写接口地址，
+                        data: JSON.stringify(StudyInfo),
+                        success: function(data){//成功
+                            console.log(data)
+                        },
+                        //请求失败，包含具体的错误信息
+                        error: function (e) {
+                           console.log(e.status);
+                            console.log(e.responseText);
+                        }
+                    });
+                });
+            });
+
+
          });
     </script>
 </html>
