@@ -23,17 +23,17 @@
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons users_circle-08"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="用户名">
+                                <input id="username" type="text" class="form-control" placeholder="用户名">
                             </div>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons text_caps-small"></i>
                                 </span>
-                                <input type="text" placeholder="密码" class="form-control" />
+                                <input id="password" type="text" placeholder="密码" class="form-control" />
                             </div>
                         </div>
-                        <div class="footer text-center">
-                            <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">登录</a>
+                        <div id="btn3" class="footer text-center">
+                            <a  href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">登录</a>
                         </div>
   
                     </form>
@@ -43,4 +43,47 @@
        
     </div>
 </body>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        // 请求登录
+        $("#btn3").click(function () {
+            const username = $("#username").val();
+            console.log(username)
+            const password = $("#password").val();
+            console.log(password)
+            //请求参数
+            const list = {password: password, username: username};
+            console.log(list.password);
+            console.log(list.username);
+            $.ajax({
+                //请求方式
+                type: "POST",
+                //请求的媒体类型
+                contentType: "application/json",
+                //请求地址
+                url: "http://localhost:8888/userInfo/login",
+                //数据，json字符串
+                data: JSON.stringify(list),
+                //请求成功
+                success: function (result) {
+                    console.log(result);
+                    if  (result===3) {
+                        window.location.href="main.html";
+                    }
+
+                },
+                //请求失败，包含具体的错误信息
+                error: function (e) {
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
+        });
+        //两页面传值
+        window.localStorage.name='123';
+    });
+</script>
 </html>

@@ -380,7 +380,7 @@
                             <span class="label online">线上</span>
                             <span class="label test">考研</span>
                             <div >
-                                <img class="avater" src="images/6.jpg"/>
+                                <img class="avater" src="images/tx.jpg"/>
                             </div>
                             <div class="label-little">
                                 <div class="join">
@@ -393,7 +393,7 @@
                             <span class="label online">线上</span>
                             <span class="label test">考研</span>
                             <div >
-                                <img class="avater" src="images/6.jpg"/>
+                                <img class="avater" src="images/tx.jpg"/>
                             </div>
                             <div class="label-little">
                                 <div class="join">
@@ -456,8 +456,31 @@
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            //滚动条方法
             $("#main").scroll(200);
-            console.log(1)
-        });
+            //掉用后台接口
+            // function init(){//按钮点击
+            //     $.ajax({
+            //         type: "GET",
+            //         url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
+            //         data: {username:$("#username").val(), content:$("#root").val()}, //调用时的参数
+            //         dataType: "json",//返回json,text,html你自己定
+            //         success: function(data){//成功
+            //             console.log(data)
+            //             // $('#resText').empty();   //清空resText里面的所有内容
+            //             // var html = '';
+            //             // $.each(data, function(commentIndex, comment){
+            //             //     html += '<div class="comment"><h6>' + comment['username']
+            //             //         + ':</h6><p class="para"' + comment['content']
+            //             //         + '</p></div>';
+            //             // });
+            //             // $('#resText').html(html);
+            //         }
+            //     });
+            // };
+            // init();    // 调用
+            //两页面传值
+            console.log(window.localStorage.name);
+         });
     </script>
 </html>
