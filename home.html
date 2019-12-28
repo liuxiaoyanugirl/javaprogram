@@ -46,7 +46,7 @@
         }
         .text{
             position: relative;
-            width: 200px;
+            width: 300px;
             height: 100px;
             top: -140px;
             left: 180px;
@@ -76,19 +76,10 @@
             left: -5px;
         }
         /*按钮盒子及样式*/
-        .btnBox{
-            position: relative;
-            width: 70%;
-            height: 56px;
-            float: left;
-            top: -176px;
-            left: 290px;
-        }
         .btn{
-            width: 80px;
-            height: 40px;
-            margin-right: 30px;
-            border-radius: 8px;
+            position: relative;
+            left: 300px;
+            top: -40px;
             background-color: #9acfea;
         }
         /*内容盒子*/
@@ -97,7 +88,7 @@
             width: 670px;
             height: 440px;
             left: 180px;
-            top: -99px;
+            top: -50px;
             background-color: whitesmoke;
         }
         .joinBox{
@@ -105,12 +96,32 @@
             width: 670px;
             height: 440px;
             left: 180px;
-            top: -99px;
+            top: -50px;
             background-color:  whitesmoke;
         }
         .table{
             position: relative;
             top: -60px;
+        }
+        /*翻页样式*/
+        #pageStyle{
+            display:inline-block;
+            width:32px;
+            height:32px;
+            border:1px solid #CCC;
+            line-height:32px;
+            text-align:center;
+            color:#999;
+            margin-top:20px;
+            text-decoration:none;
+
+        }
+        #pageStyle:hover{
+            background-color:#CCC;
+        }
+        #pageStyle .active{
+            background-color:#0CF;
+            color:#ffffff;
         }
     </style>
     </head>
@@ -125,15 +136,11 @@
                  <img class="avater" src="images/tx.jpg"/>
              </div>
              <div class="text">
-                 <button>编辑资料</button>
-                 <p>花回louisa</p>
+                 <p id="un"></p>
                  <p>男</p>
-             </div>
-             <div class="btnBox">
-                 <button class="btn">查看</button>
-                 <button class="btn">撤销</button>
-                 <button class="btn">删除</button>
-                 <button class="btn">审核申请</button>
+                 <p id="lb"></p>
+                 <span id="ct"></span> <span id="sc"></span> <span id="xy"></span> <span id="zy"></span>
+                 <button class="btn">编辑资料</button>
              </div>
          </div>
          <div>
@@ -152,45 +159,40 @@
                      <thead>
                      <tr>
                          <th>标题</th>
-                         <th>发布日期</th>
+                         <th>类型</th>
                          <th>状态</th>
+                         <th>操作</th>
+                         <th>操作</th>
                      </tr>
                      </thead>
                      <tbody>
-                     <tr class="success">
-                         <td>使用 jQuery 应用 JavaScript 效果</td>
-                         <td>10/11/2013</td>
-                         <td>发布中</td>
+                     <tr class="warning">
+                         <td id="1">产品2产品2产品2产品2产品2产品2</td>
+                         <td>组对学习</td>
+                         <td>申请中</td>
+                         <td><button >查看</button></td>
+                         <td><button >删除</button></td>
                      </tr>
                      <tr class="success">
-                         <td>产品2</td>
+                         <td id="2">产品2</td>
                          <td>10/11/2013</td>
-                         <td>发布中</td>
+                         <td>已成功</td>
+                         <td><button >查看</button></td>
+                         <td><button >删除</button></td>
                      </tr>
-                     <tr class="success">
-                         <td>产品2</td>
+                     <tr  class="danger">
+                         <td id="3">产品4</td>
+                         <td>20/10/2013</td>
+                         <td>已拒绝</td>
+                         <td><button >查看</button></td>
+                         <td><button >删除</button></td>
+                     </tr>
+                     <tr class="active">
+                         <td id="4">产品2</td>
                          <td>10/11/2013</td>
-                         <td>发布中</td>
-                     </tr>
-                     <tr  class="warning">
-                         <td>产品3</td>
-                         <td>20/10/2013</td>
-                         <td>待审核</td>
-                     </tr>
-                     <tr  class="danger">
-                         <td>产品4</td>
-                         <td>20/10/2013</td>
-                         <td>已删除</td>
-                     </tr>
-                     <tr  class="danger">
-                         <td>产品4</td>
-                         <td>20/10/2013</td>
-                         <td>已删除</td>
-                     </tr>
-                     <tr  class="danger">
-                         <td>产品4</td>
-                         <td>20/10/2013</td>
-                         <td>已删除</td>
+                         <td>已结束</td>
+                         <td><button >查看</button></td>
+                         <td><button >删除</button></td>
                      </tr>
                      </tbody>
                  </table>
@@ -200,45 +202,19 @@
                  <thead>
                  <tr>
                      <th>标题</th>
-                     <th>发布日期</th>
+                     <th>类型</th>
                      <th>状态</th>
+                     <th>操作</th>
+                     <th>操作</th>
                  </tr>
                  </thead>
                  <tbody>
                  <tr class="warning">
-                     <td>产品2</td>
-                     <td>10/11/2013</td>
+                     <td>产品2产品2产品2产品2产品2产品2</td>
+                     <td>组对学习</td>
                      <td>申请中</td>
-                 </tr>
-                 <tr class="success">
-                     <td>产品2</td>
-                     <td>10/11/2013</td>
-                     <td>已成功</td>
-                 </tr>
-                 <tr  class="danger">
-                     <td>产品4</td>
-                     <td>20/10/2013</td>
-                     <td>已拒绝</td>
-                 </tr>
-                 <tr class="active">
-                     <td>产品2</td>
-                     <td>10/11/2013</td>
-                     <td>已结束</td>
-                 </tr>
-                 <tr class="active">
-                     <td>产品2</td>
-                     <td>10/11/2013</td>
-                     <td>已结束</td>
-                 </tr>
-                 <tr class="active">
-                     <td>产品2</td>
-                     <td>10/11/2013</td>
-                     <td>已结束</td>
-                 </tr>
-                 <tr class="active">
-                     <td>产品2</td>
-                     <td>10/11/2013</td>
-                     <td>已结束</td>
+                     <td><button >查看</button></td>
+                     <td><button >删除</button></td>
                  </tr>
                  </tbody>
              </table></div>
@@ -249,7 +225,49 @@
     </body>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
+        //翻页
+        $(function(){
+            var $table = $('table');
+            var currentPage = 0;//当前页默认值为0
+            var pageSize = 5;//每一页显示的数目
+            $table.bind('paging',function(){
+                $table.find('tbody tr').hide().slice(currentPage*pageSize,(currentPage+1)*pageSize).show();
+            });
+            var sumRows = $table.find('tbody tr').length;
+            var sumPages = Math.ceil(sumRows/pageSize);//总页数
 
+            var $pager = $('<div class="page"></div>');  //新建div，放入a标签,显示底部分页码
+            for(var pageIndex = 0 ; pageIndex<sumPages ; pageIndex++){
+                $('<a href="#" id="pageStyle" onclick="changCss(this)"><span>'+(pageIndex+1)+'</span></a>').bind("click",{"newPage":pageIndex},function(event){
+                    currentPage = event.data["newPage"];
+                    $table.trigger("paging");
+                    //触发分页函数
+                }).appendTo($pager);
+                $pager.append(" ");
+            }
+            $pager.insertAfter($table);
+            $table.trigger("paging");
+
+            //默认第一页的a标签效果
+            var $pagess = $('#pageStyle');
+            $pagess[0].style.backgroundColor="#006B00";
+            $pagess[0].style.color="#ffffff";
+        });
+        //a链接点击变色，再点回复原色
+        function changCss(obj){
+            var arr = document.getElementsByTagName("a");
+            for(var i=0;i<arr.length;i++){
+                if(obj===arr[i]){       //当前页样式
+                    obj.style.backgroundColor="#006B00";
+                    obj.style.color="#ffffff";
+                }
+                else
+                {
+                    arr[i].style.color="";
+                    arr[i].style.backgroundColor="";
+                }
+            }
+        }
         $(document).ready(function(){
             // 选择出现隐藏
             $(".joinBox").hide();
@@ -261,6 +279,40 @@
                 $(".publicBox").show();
                 $(".joinBox").hide();
             });
+            function init() {
+                //显示个人信息
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8888/userInfo/getUserInfo?username=root", //这里写接口地址，
+                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    dataType: "json",//返回json
+                    success: function (data) {//成功
+                        console.log(data)
+                        $('#un').html(data.username);
+                        $('#lb').html(data.personalizedLabels);
+                        $('#sc').html(data.school);
+                        $('#xy').html(data.academy);
+                        $('#zy').html(data.major);
+                        $('#ct').html(data.city);
+                    }
+                });
+                //显示全部个人组队信息
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8888/studyInfo/getStudyInfoWithUserIssue?username=root&pageNum=1&pageSize=20", //这里写接口地址，
+                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    dataType: "json",//返回json
+                    success: function(data){//成功
+                        console.log(data);
+                        $('#4').html(data.list[0].actionName );
+                        $('#1').html(data.list[1].actionName);
+                        $('#2').html(data.list[2].actionName);
+                        $('#3').html(data.list[3].actionName);
+                    }
+                });
+            }
+                init();    // 调用
+
         });
     </script>
 </html>

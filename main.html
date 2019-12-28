@@ -2,6 +2,7 @@
 <html lang="en">
 	<head>
         <meta charset="utf-8">
+        <link rel ="stylesheet" href="css/bootstrap.css" >
 <!-- Main CSS -->
     <style>
         body{
@@ -27,10 +28,6 @@
             left: 150px;
             height: 600px;
             border-radius: 10px;
-            /*background: -moz-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
-            /*background: -webkit-linear-gradient(top,#fff 10%, lightblue 100%, #fff 100%);*/
-            /*background: linear-gradient(to top, #fff -40%, lightblue 140%);*/
-            /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );*/
         }
         /*主导航*/
         .MainNavigation{
@@ -42,7 +39,6 @@
 
         }
         .MainNavigation ul {
-
             list-style: none;
         }
         .nav-link{
@@ -287,11 +283,11 @@
             <div class="MainNavigation">
             <ul>
                 <li>
-                <a class="nav-link" href="home.html">我的主页</a>
-                <a class="nav-link" href="#" >组队学习</a>
-                <a class="nav-link" href="#">吃喝玩乐</a>
-                <a class="nav-link" href="#">湖大趣闻</a>
+                    <a class="nav-link" href="#">首页信息</a>
+                    <a class="nav-link" href="#">组队学习</a>
+                    <a class="nav-link" href="#">吃喝玩乐</a>
                 <a class="nav-link" href="#">课程讲座</a>
+                <a class="nav-link" href="home.html">个人中心</a>
                 </li>
             </ul>
             </div>
@@ -346,34 +342,7 @@
                                 <p class="lefPeople">剩余人数3/5</p>
                             </div>
                         </div>
-                        <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
-                        </div>
-                        <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
-                        </div>
                     </div>
-                
                 <!-- Sidebar -->
                     <div class="sidebar-box">
                         <img class="user" src="images/tx.jpg">   <br>
@@ -393,7 +362,6 @@
                             <a class="list-group-item" href="#">了解更多</a>
                     </div>
                     </div>
-                
                 </div>
         </div>
 <!--    public content area-->
@@ -426,6 +394,7 @@
     <script src="jquery.min.js"></script>
     <script src="jquery.cookie.js"></script>
     <script type="text/javascript">
+
         $(document).ready(function(){
             //滚动条方法
             $("#main").scroll(200);
@@ -448,28 +417,29 @@
                     // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
                     dataType: "json",//返回json
                     success: function(data){//成功
+                        console.log(data);
                         $('#title0').html(data.list[0].actionName );
                         $('#part01').html(data.list[0].userSchool );
                         $('#part02').html(data.list[0].site );
-                        $('#part03').html(data.list[0].time   );
-                        $('#part04').html(data.list[0].type   );
-                        $('#part05').html(data.list[0].label   );
+                        $('#part03').html(data.list[0].time  );
+                        $('#part04').html(data.list[0].type  );
+                        $('#part05').html(data.list[0].label  );
                         $('#remark0').html(data.list[0].ps);
 
                         $('#title1').html(data.list[1].actionName);
                         $('#part11').html(data.list[1].userSchool );
-                        $('#part12').html(data.list[1].site );
-                        $('#part13').html(data.list[1].time   );
-                        $('#part14').html(data.list[1].type   );
-                        $('#part15').html(data.list[1].label   );
+                        $('#part12').html(data.list[1].site);
+                        $('#part13').html(data.list[1].time  );
+                        $('#part14').html(data.list[1].type  );
+                        $('#part15').html(data.list[1].label );
                         $('#remark1').html(data.list[1].ps);
 
                         $('#title2').html(data.list[2].actionName);
                         $('#part21').html(data.list[2].userSchool );
                         $('#part22').html(data.list[2].site );
-                        $('#part23').html(data.list[2].time   );
-                        $('#part24').html(data.list[2].type   );
-                        $('#part25').html(data.list[2].label   );
+                        $('#part23').html(data.list[2].time );
+                        $('#part24').html(data.list[2].type );
+                        $('#part25').html(data.list[2].label );
                         $('#remark2').html(data.list[2].ps);
                     }
                 });
@@ -479,7 +449,7 @@
             //主页面取值
             $(function(){
                 var username = $.cookie('username');//获取存储的cookie
-                // console.log(username);
+                console.log(username);
                 $('#aa').html(username);//打印到页面上
                 //发布组队信息
                 $(".btn-1").click(function(){
@@ -513,7 +483,7 @@
                         url: "http://localhost:8888/studyInfo/insert", //这里写接口地址，
                         data: JSON.stringify(StudyInfo),
                         success: function(data){//成功
-                            console.log(data)
+                            // console.log(data);
                         },
                         //请求失败，包含具体的错误信息
                         error: function (e) {
@@ -523,8 +493,6 @@
                     });
                 });
             });
-
-
          });
     </script>
 </html>
