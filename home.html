@@ -86,16 +86,16 @@
         .publicBox{
             position: relative;
             width: 670px;
-            height: 440px;
-            left: 180px;
+            height: 360px;
+            left: 200px;
             top: -50px;
             background-color: whitesmoke;
         }
         .joinBox{
             position: relative;
             width: 670px;
-            height: 440px;
-            left: 180px;
+            height: 360px;
+            left: 200px;
             top: -50px;
             background-color:  whitesmoke;
         }
@@ -166,21 +166,21 @@
                      </tr>
                      </thead>
                      <tbody>
-                     <tr class="warning">
+                     <tr class="active">
                          <td id="1">产品2产品2产品2产品2产品2产品2</td>
                          <td>组对学习</td>
                          <td>申请中</td>
                          <td><button >查看</button></td>
                          <td><button >删除</button></td>
                      </tr>
-                     <tr class="success">
+                     <tr class="active">
                          <td id="2">产品2</td>
                          <td>10/11/2013</td>
                          <td>已成功</td>
                          <td><button >查看</button></td>
                          <td><button >删除</button></td>
                      </tr>
-                     <tr  class="danger">
+                     <tr  class="active">
                          <td id="3">产品4</td>
                          <td>20/10/2013</td>
                          <td>已拒绝</td>
@@ -209,7 +209,7 @@
                  </tr>
                  </thead>
                  <tbody>
-                 <tr class="warning">
+                 <tr class="active">
                      <td>产品2产品2产品2产品2产品2产品2</td>
                      <td>组对学习</td>
                      <td>申请中</td>
@@ -269,17 +269,40 @@
             }
         }
         $(document).ready(function(){
+            function setCookie(cname,cvalue) {
+                var d=new Date();
+                d.setTime(d.getTime()+7*24*60*60*1000);
+                var expires="expires="+d.toGMTString();
+                document.cookie=cname+"="+cvalue+";"+expires;
+            }
+            function getCookie(cname){
+                var name=cname+"=";
+                var ca=document.cookie.split(';');
+                for (var i=0;i<ca.length;i++){
+                    var c=ca[i].trim();
+                    if(c.indexOf(name)==0){
+                        return c.substring(name.length,c.length);
+                    }
+                }
+            }
             // 选择出现隐藏
             $(".joinBox").hide();
             $(".join").click(function(){
-                $(".joinBox").show();
+                $(".joinBox").show().css("background-color","#9acfea");
                 $(".publicBox").hide();
+                $(".join").css("background-color","#9acfea");
+                $(".public").css("background-color","lightgray");
             });
             $(".public").click(function(){
-                $(".publicBox").show();
+                $(".publicBox").show().css("background-color","#9acfea");
                 $(".joinBox").hide();
+                $(".public").css("background-color","#9acfea");
+                $(".join").css("background-color","lightgray");
             });
             function init() {
+                var test = getCookie("uname");
+                $('#un').html(test);
+                console.log(test);
                 //显示个人信息
                 $.ajax({
                     type: "GET",

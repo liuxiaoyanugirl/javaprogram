@@ -396,10 +396,29 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
+            function setCookie(cname,cvalue) {
+                var d=new Date();
+                d.setTime(d.getTime()+7*24*60*60*1000);
+                var expires="expires="+d.toGMTString();
+                document.cookie=cname+"="+cvalue+";"+expires;
+            }
+            function getCookie(cname){
+                var name=cname+"=";
+                var ca=document.cookie.split(';');
+                for (var i=0;i<ca.length;i++){
+                    var c=ca[i].trim();
+                    if(c.indexOf(name)==0){
+                        return c.substring(name.length,c.length);
+                    }
+                }
+            }
             //滚动条方法
             $("#main").scroll(200);
             //掉用后台接口
             function init(){
+                var test = getCookie("uname");
+                $('#aa').html(test);
+                console.log(test);
                 //显示个人信息
                 $.ajax({
                     type: "GET",
@@ -448,9 +467,6 @@
             init();    // 调用
             //主页面取值
             $(function(){
-                var username = $.cookie('username');//获取存储的cookie
-                console.log(username);
-                $('#aa').html(username);//打印到页面上
                 //发布组队信息
                 $(".btn-1").click(function(){
                     const actionName = $("#actionName").val();
