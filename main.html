@@ -422,8 +422,8 @@
                 //显示个人信息
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8888/userInfo/getUserInfo?username=root", //这里写接口地址，
-                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
+                    data: {username:$("test").val()}, //调用时的参数
                     dataType: "json",//返回json
                     success: function(data){//成功
                         $('.signature').html(data.personalizedSignature);
@@ -432,34 +432,34 @@
                 //显示全部组队信息
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8888/studyInfo/getStudyInfo?username=root&pageNum=1&pageSize=10", //这里写接口地址，
+                    url: "http://localhost:8888/studyInfo/getStudyInfo?username=root", //这里写接口地址，
                     // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
                     dataType: "json",//返回json
                     success: function(data){//成功
                         console.log(data);
-                        $('#title0').html(data.list[0].actionName );
-                        $('#part01').html(data.list[0].userSchool );
-                        $('#part02').html(data.list[0].site );
-                        $('#part03').html(data.list[0].time  );
-                        $('#part04').html(data.list[0].type  );
-                        $('#part05').html(data.list[0].label  );
-                        $('#remark0').html(data.list[0].ps);
+                        $('#title0').html(data[0].actionName );
+                        $('#part01').html(data[0].userSchool );
+                        $('#part02').html(data[0].site );
+                        $('#part03').html(data[0].time  );
+                        $('#part04').html(data[0].type  );
+                        $('#part05').html(data[0].label  );
+                        $('#remark0').html(data[0].ps);
 
-                        $('#title1').html(data.list[1].actionName);
-                        $('#part11').html(data.list[1].userSchool );
-                        $('#part12').html(data.list[1].site);
-                        $('#part13').html(data.list[1].time  );
-                        $('#part14').html(data.list[1].type  );
-                        $('#part15').html(data.list[1].label );
-                        $('#remark1').html(data.list[1].ps);
+                        $('#title1').html(data[1].actionName);
+                        $('#part11').html(data[1].userSchool );
+                        $('#part12').html(data[1].site);
+                        $('#part13').html(data[1].time  );
+                        $('#part14').html(data[1].type  );
+                        $('#part15').html(data[1].label );
+                        $('#remark1').html(data[1].ps);
 
-                        $('#title2').html(data.list[2].actionName);
-                        $('#part21').html(data.list[2].userSchool );
-                        $('#part22').html(data.list[2].site );
-                        $('#part23').html(data.list[2].time );
-                        $('#part24').html(data.list[2].type );
-                        $('#part25').html(data.list[2].label );
-                        $('#remark2').html(data.list[2].ps);
+                        $('#title2').html(data[2].actionName);
+                        $('#part21').html(data[2].userSchool );
+                        $('#part22').html(data[2].site );
+                        $('#part23').html(data[2].time );
+                        $('#part24').html(data[2].type );
+                        $('#part25').html(data[2].label );
+                        $('#remark2').html(data[2].ps);
                     }
                 });
 
