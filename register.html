@@ -69,7 +69,7 @@ body{
       <div><hr/></div>
 
       <div>
-        <button type="submit">提交</button>
+        <button type="submit" id="submit">提交</button>
         <button id="reset" type="button">重置</button>
           <a type="submit"a href="login-two.html">返回 </a></button>
       </div>
@@ -84,13 +84,10 @@ body{
 <script type="text/javascript" src="js/jquery.idealforms.js"></script>
 <script type="text/javascript">
 var options = {
-
 	onFail: function(){
 		alert( $myform.getInvalid().length +' invalid fields.' )
 	},
-
 	inputs: {
-
 		'password': {
 			filters: 'required pass',
 		},
@@ -109,16 +106,59 @@ var options = {
         data: { min: 5, max: 200 }
       },
 	}
-	
 };
-
 var $myform = $('#my-form').idealforms(options).data('idealforms');
-
 $('#reset').click(function(){
 	$myform.reset().fresh().focusFirst()
 });
 $myform.focusFirst();
-
+//用户注册页面取值
+$(function(){
+	//获取所填信息
+	$("#submit").click(function(){
+		const username = $("#username").val();
+		const nickname = $("#nickname").val();
+		const password = $("#password").val();
+		const sex = $("#sex").val();
+		const city = $("#city").val();
+		const school = $("#school").val();
+		const academy = $("#academy").val();
+		const major = $("#major").val();
+		const personalized_signature = $("#personalized_signature").val();
+		const knowing = $("#knowing").val();
+		const personalized_labels = $("#personalized_labels").val();
+		//请求参数
+		const userInfo = {
+			username: username,
+            nickname: nickname,
+            password: password,
+            sex: sex,
+            city: city,
+            school:school,
+            academy: academy,
+            major: major,
+            personalized_signature: personalized_signature,
+            knowing: knowing,
+            personalized_labels: personalized_labels,
+		};
+		$.ajax({
+			type: "PUT",
+			dataType: 'json',
+			contentType: "application/json",//返回json
+			url: "http://localhost:8888/userInfo/insert", //这里写接口地址，
+			data: JSON.stringify(userInfo),
+			success: function(data){//成功
+				console.log(data);
+				console.log(1)
+			},
+			//请求失败，包含具体的错误信息
+			error: function (e) {
+				console.log(e.status);
+				console.log(e.responseText);
+			}
+		});
+	});
+});
 </script>
 </body>
 </html>
