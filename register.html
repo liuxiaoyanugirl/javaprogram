@@ -1,57 +1,124 @@
 <!DOCTYPE html>
-<html>
+
 <head>
-<title>注册界面</title>
-<meta name="viewport" content="width=device-width">
-<meta charset="utf-8">
-<meta name="keywords" content="" />
-<link href="css/register-style.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>用户注册页面</title>
+
+<script src="js/html5shiv.js"></script>
+<link href="css/normalize.css" rel="stylesheet"/>
+<link href="css/step-register-ui.css" rel="stylesheet"/>
+<link href="css/step-register-style.css" rel="stylesheet" media="screen"/>
+<style type="text/css">
+
+
+body{
+  font:normal 15px/1.5 Arial, Helvetica, Free Sans, sans-serif;
+  color: #222;
+  background:url(images/cloud.jpg);
+  overflow-y:scroll;
+  padding:60px 0 0 0;
+}
+#my-form{
+  width:755px;
+  margin:0 auto;
+  border:1px solid #ccc;
+  padding:3em;
+  border-radius:3px;
+  box-shadow:0 0 2px rgba(0,0,0,.2);
+}
+
+</style>
+
 </head>
 <body>
-<div class="signupform">
-<h1>Supater学习社区注册</h1>
-	<div class="container">
-		
-		<div class="whole_info ">
-			<div class="Big_demo">
-				<div class="left_box">
-					<h3>Welcome (*^_^*)</h3>
-					</br>
-					</br>
-					<h4>Supater学习社区，一个带您学习的网站</h4>
-					
-				</div>
-			</div>
-			<div class="demo1">
-				<h2>Create an account</h2>
-				<p>您的相关信息仅在Supater社区中使用</p>
-						<form action="#" method="post">
-						<div class="input-group">
-							<span><i class="user" aria-hidden="true"></i></span>
-							<input type="text" placeholder="账号" required=""> 
-						</div>
-			
-						<div class="input-group">
-							<span><i class="envelope" aria-hidden="true"></i></span>
-							<input type="email" placeholder="邮箱" required=""> 
-						</div>
-						<div class="input-group">
-							<span><i class="lock" aria-hidden="true"></i></span>
-							<input type="Password" placeholder="密码" required="">
-						</div>
-						<div class="input-group">
-							<span><i class="lock" aria-hidden="true"></i></span>
-							<input type="Password" placeholder="确认密码" required="">
-						</div>
-			      
-							<button class="btn btn-box1 btn-box2" type="submit">注册</button >
-					</form>
-			</div>
-			<div class="clear"></div>
-			</div>
-			
-		</div>
 
-	</div>
-	</body>
+
+<div class="row">
+
+  <div class="eightcol last">
+    <form id="my-form">
+
+        <section name="第一步">
+          <div><label>用户名:</label><input id="username" name="username" type="text"/></div>
+          <div><label>昵称:</label><input id="nickname" name="nickname" type="text"/></div>
+          <div><label>密码:</label><input id="pass" name="password"  type="password"/></div>
+          <div>
+            <label>性别:</label>
+            <select id="sex" name="sex">
+              <option value="default">&ndash; 选择性别 &ndash;</option>
+              <option value="boy">男</option>
+              <option value="girl">女</option>
+            </select>
+          </div>
+        </section>
+
+        <section name="第二步">
+            <div><label>所在城市:</label><input id="city" name="city" type="text"/></div>
+            <div><label>所在学校:</label><input id="school" name="school" type="text"/></div>
+            <div><label>所在院系:</label><input id="academy" name="academy" type="text"/></div>
+          <div><label>所在专业:</label><input id="major" name="major" type="text"/></div>
+        </section>
+
+        <section name="第三步">
+          <div><label>座右铭:</label><textarea id="personalized_signature" name="personalized_signature"></textarea></div>
+        <div><label>个人标签:</label><input id="knowing"  type="text" name="labels" /></div>
+        <div><label>个性签名:</label><textarea id="personalized_labels" name="personalized_labels"></textarea></div>
+      </section>
+
+      <div><hr/></div>
+
+      <div>
+        <button type="submit">提交</button>
+        <button id="reset" type="button">重置</button>
+          <a type="submit"a href="login-two.html">返回 </a></button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.idealforms.js"></script>
+<script type="text/javascript">
+var options = {
+
+	onFail: function(){
+		alert( $myform.getInvalid().length +' invalid fields.' )
+	},
+
+	inputs: {
+
+		'password': {
+			filters: 'required pass',
+		},
+		'username': {
+			filters: 'required username',
+			data: {
+			//ajax: { url:'validate.php' }
+			}
+		},
+		'personalized_labels': {
+			filters: 'min max',
+			data: { min: 5, max: 200 }
+		},
+      'personalized_signature': {
+        filters: 'min max',
+        data: { min: 5, max: 200 }
+      },
+	}
+	
+};
+
+var $myform = $('#my-form').idealforms(options).data('idealforms');
+
+$('#reset').click(function(){
+	$myform.reset().fresh().focusFirst()
+});
+$myform.focusFirst();
+
+</script>
+</body>
 </html>
