@@ -117,12 +117,12 @@ a:hover{ text-decoration: underline; }
 #username { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
 #content form input[type="submit"] {
-	background: rgb(254,231,154);
-	background: linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
+	background: #87CEFA;
+	background: linear-gradient(top,  #87CEFA 0%, #1E90FF 100%);
 	border-radius: 30px;
 	box-shadow: 0 1px 0 rgba(255,255,255,0.8) inset;
-	border: 1px solid #D69E31;
-	color: #85592e;
+	border: 1px solid #b3fbfe;
+	color: #8B8989;
 	cursor: pointer;
 	float: left;
 	font: bold 15px Helvetica, Arial, sans-serif;
@@ -133,8 +133,8 @@ a:hover{ text-decoration: underline; }
 	width: 120px;
 }
 #content form input[type="submit"]:hover {
-	background: rgb(254,193,81);
-	background: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
+	background: rgb(179, 251, 254);
+	background: linear-gradient(top, rgb(5, 251, 254) 0%, rgb(179, 251, 254) 100%);
 }
 #content form div a {
 	color: #004a80;
