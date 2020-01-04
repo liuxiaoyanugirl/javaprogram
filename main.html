@@ -2,8 +2,15 @@
 <html lang="en">
 	<head>
         <meta charset="utf-8">
+        <link rel ="stylesheet" href="css/bootstrap.css" >
 <!-- Main CSS -->
     <style>
+        body{
+            width: 900px;
+            height: 880px;
+            background: url("images/bcg.jpg") no-repeat;
+
+        }
         *{
             padding: 0;
             margin: 0;
@@ -12,19 +19,15 @@
         .heaBac{
             width: 90%;
             height: 100px;
-            border: 1px solid black;
             margin: auto;
         }
         /*主盒子*/
         .mainBox {
             position: absolute;
-            width:89%;
-            left: 82px;
+            width:80%;
+            left: 150px;
             height: 600px;
-            background: -moz-linear-gradient(top, #FFA500 10%, #fff 100%);
-            background: -webkit-linear-gradient(top,#FFA500 10%, #fff 100%);
-            background: linear-gradient(to bottom, #FFA500 10%, #fff 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten($primary, 5%)', endColorstr='$primary',GradientType=0 );
+            border-radius: 10px;
         }
         /*主导航*/
         .MainNavigation{
@@ -32,7 +35,8 @@
             width: 60%;
             height: 50px;
             top: 60px;
-            left: 370px;
+            left: 280px;
+
         }
         .MainNavigation ul {
             list-style: none;
@@ -47,6 +51,8 @@
             color:black;
             font-size: 20px;
             text-decoration:none;
+            border-radius: 5px;
+            border: 1px solid lightblue;
         }
         .nav-link:hover{
             border: 1px solid black;
@@ -61,23 +67,30 @@
             border: 1px solid black;
         }
         /*标签盒子*/
+        .main{
+            width: 820px;
+            height: 400px;
+            border-radius: 10px;
+            border: 2px solid white;
+            overflow-y: scroll;
+            overflow-x:hidden;
+            margin: 90px 160px;
+        }
         .labelBox{
-            position: absolute;
-            width: 840px;
-            height: 150px;
-            margin-left: 360px;
-            margin-top: 100px;
+            width: 780px;
+            height: 120px;
+            margin:10px auto;
             border-radius: 5px;
             border: 1px solid white;
         }
         /*标签内头像*/
         .avater{
             position: relative;
-            width: 80px;
-            height: 80px;
+            width: 76px;
+            height: 76px;
             left: 10px;
-            top: 20px;
-            border: 3px solid coral;
+            top: 4px;
+            border: 3px solid lightblue;
             border-radius: 100px;
         }
         /*标签内小标签*/
@@ -85,113 +98,183 @@
             position: relative;
             width: 120px;
             height: 30px;
+            top: 5px;
             color: white;
             border-radius: 5px;
-            background-color: #d58512;
+            background-color: lightblue;
         }
         /*标签内介绍框*/
         .label-little{
             position: relative;
             width: 560px;
-            height: 100px;
+            height: 80px;
             border: 1px solid white;
             border-radius: 5px;
-            top: -70px;
+            top: -78px;
             left: 100px;
-        }
-        .line{
-            width: 420px;
-            height:  1px;
-            background-color: whitesmoke;
         }
         .join{
             position: relative;
-            width: 60px;
-            height: 66px;
-            line-height: 66px;
-            color: white;
-            background-color: dodgerblue;
-            border-radius: 100px;
-            left: 630px;
+            width: 16px;
+            height: 16px;
+            top: -20px;
+            left: 600px;
         }
         .online{
             position: relative;
-            left: 100px;
-        }
+            left: 100px;        }
         .test{
             position: relative;
             left: 120px;
         }
         .lefPeople{
             position: relative;
-            left: 600px;
-            top: 6px;
+            left: 580px;
+            top: 46px;
 
         }
         /*侧边样式*/
         .sidebar-box {
             position: absolute;
-            width: 20%;
+            width: 14%;
             height: 500px;
-            left: 30px;
-            top: 0;
-            border: 1px solid black;
+            left: 6px;
+            top: -60px
+           
         }
         .user {
             height: 100px;
             width: 100px;
             margin-top: 5px;
-            margin-left: 40px;
+            margin-left: 20px;
             border: 2px solid white;
             border-radius: 100px;
         }
         .nickName{
             position: relative;
-            top: -40px;
-            left: 3px;
+            top: 5px;
+            left: 36px;
+            border-radius: 3px;
+            border: 1px solid white;
         }
-        .signature{
+        .signature {
+            position: relative;
+            width: 96%;
             display: block;
             color: black;
-            margin-left: 5px;
+            top: 10px;
+            left: 5px;
+
         }
         .list-group{
             position: relative;
-            width: 80%;
+            width: 100%;
             height: 246px;
-            top: 20px;
+            top: 44px;
             left: 10px;
-            border: 1px solid white;
+            background-color: whitesmoke;
             border-radius: 5px;
         }
          .list-group .list-group-item{
              text-decoration: none;
              display: block;
              position: relative;
-             width: 100%;
-             height: 40px;
-             line-height: 40px;
+             width: 138px;
+             height: 42px;
+             line-height: 36px;
              text-align: center;
              font-size: 20px;
              color: black;
         }
          .list-group-item:hover{
-             background-color: whitesmoke;
+             background-color:lightcyan;
          }
         .list-line {
             position: relative;
-            width: 220px;
+            width: 134px;
             height: 1px;
             background-color: white;
         }
+      /*发布框*/
+        .public-box{
+            position: relative;
+            width: 200px;
+            height: 400px;
+            top: 140px;
+            left: 1144px;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+        .public-head{
+            width: 100%;
+            height: 12%;
+        }
+        .phead-1{
+            width: 100px;
+            margin: 8px 8px;
+            color: black;
+        }
+        .phead-2 {
+            width: 80px;
+            margin: 8px 0;
+            color:dodgerblue;
+        }
+        .phead-3{
+            position: relative;
+            width: 140px;
+            left: 40px;
+            top: -20px;
+            color: #d5d5d5;
+        }
 
+        .phead-4{
+            width: 80px;
+            margin: 6px 0 0 0;
+            color:dodgerblue;
+        }
+        .btn-1{
+            width: 60px;
+            height: 30px;
+            color: black;
+            margin-top: 310px;
+            margin-left: 120px;
+            background-color:lightblue;
+            border-radius: 5px;
+        }
+        /*滚动条样式*/
+        /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+        ::-webkit-scrollbar
+        {
+            width: 10px;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+
+        /*定义滚动条轨道 内阴影+圆角*/
+        ::-webkit-scrollbar-track
+        {
+            border-radius: 10px;
+            background-color:transparent ;
+        }
+
+        /*定义滑块 内阴影+圆角*/
+        ::-webkit-scrollbar-thumb
+        {
+            border-radius: 10px;
+            background-color: lightblue;
+        }
+        /*定义最上方和最下方的按钮*/
+        ::-webkit-scrollbar-button{
+            border-radius: 10px;
+            background-color: transparent;
+        }
     </style>
     </head>
     <body>
     <!-- Header content area -->
     <div class="heaBac">
      <div>
-      <h1>湖 北 大 学 学 习 交 友 贴 吧</h1>
+      <h1 style="color: #d5d5d5">supater 学 习 交 友 社 区</h1>
      </div>
     </div>
         <!-- Main content area -->
@@ -200,67 +283,73 @@
             <div class="MainNavigation">
             <ul>
                 <li>
-                <a class="nav-link" href="index.html">主页</a>
-                <a class="nav-link" href="#" >组队学习</a>
-                <a class="nav-link" href="#">吃喝玩乐</a>
-                <a class="nav-link" href="#">湖大趣闻</a>
+                    <a class="nav-link" href="#">首页信息</a>
+                    <a class="nav-link" href="#">组队学习</a>
+                    <a class="nav-link" href="#">吃喝玩乐</a>
                 <a class="nav-link" href="#">课程讲座</a>
+                <a class="nav-link" href="home.html">个人中心</a>
                 </li>
             </ul>
             </div>
             <!-- Main content -->
                 <div class="col-sm-8">
                     <div class="main">
-
                        <div class="labelBox">
                             <span class="label online">线上</span>
                             <span class="label test">考研</span>
                             <div >
-                                <img class="avater" src="images/6.jpg"/>
+                                <img class="avater" src="images/tx.jpg"/>
                             </div>
                             <div class="label-little">
+                                <p id="title0" style="background-color: #4cae4c"></p>
+                                <span id="part01"></span> <span id="part02"> </span> <span id="part03"> </span><span id="part04"></span><span id="part05"></span>
+                                <p id="remark0" style="background-color: #4cae4c"></p>
                             <div class="join">
-                                join!
+                                <img  src="images/join.png"/>
                             </div>
                             <p class="lefPeople">剩余人数3/5</p>
                         </div>
                         </div>
-                       <div class="labelBox" style="margin-top: 245px">
-                                <span class="label online">线上</span>
-                                <span class="label test">考研</span>
-                               <div class="line"></div>
-                                <div >
-                                    <img class="avater" src="images/6.jpg"/>
-                                </div>
-                                <div class="label-little">
-                                    <div class="join">
-                                        join!
-                                    </div>
-                                    <p class="lefPeople">剩余人数3/5</p>
-                                </div>
-                            </div>
-                       <div class="labelBox" style="margin-top: 400px">
+                       <div class="labelBox">
                             <span class="label online">线上</span>
                             <span class="label test">考研</span>
-                            <div class="line"></div>
                             <div >
-                                <img class="avater" src="images/6.jpg"/>
+                                <img class="avater" src="images/tx.jpg"/>
+                            </div>
+                           <div class="label-little">
+                               <p id="title1" style="background-color: #4cae4c"></p>
+                               <span id="part11"></span> <span id="part12"> </span> <span id="part13"> </span><span id="part14"></span><span id="part15"></span>
+                               <p id="remark1" style="background-color: #4cae4c"></p>
+                               <div class="join">
+                                   <img  src="images/join.png"/>
+                               </div>
+                               <p class="lefPeople">剩余人数3/5</p>
+                           </div>
+                        </div>
+                        <div class="labelBox">
+                            <span class="label online">线上</span>
+                            <span class="label test">考研</span>
+                            <div >
+                                <img class="avater" src="images/tx.jpg"/>
                             </div>
                             <div class="label-little">
+                                <p id="title2" style="background-color: #4cae4c"></p>
+                                <span id="part21"></span> <span id="part22"> </span> <span id="part23"> </span><span id="part24"></span><span id="part25"></span>
+                                <p id="remark2" style="background-color: #4cae4c"></p>
                                 <div class="join">
-                                    join!
+                                    <img  src="images/join.png"/>
                                 </div>
                                 <p class="lefPeople">剩余人数3/5</p>
                             </div>
                         </div>
                     </div>
-                
                 <!-- Sidebar -->
                     <div class="sidebar-box">
-                        <img class="user" src="images/6.jpg"><span class="nickName">艾克宾利</span>
-                        <span class="signature">不学好英语不改个性签名</span>
+                        <img class="user" src="images/tx.jpg">   <br>
+                        <span id="aa" class="nickName"></span>
+                        <span class="signature">  不学好英语不改签名</span>
                         <div class="list-group">
-                            <a class="list-group-item" href="index.html">发布组队</a>
+                            <a class="list-group-item" href="#">发布组队</a>
                             <div class="list-line"></div>
                             <a class="list-group-item" href="#">我的组队</a>
                             <div class="list-line"></div>
@@ -273,8 +362,153 @@
                             <a class="list-group-item" href="#">了解更多</a>
                     </div>
                     </div>
-                
                 </div>
         </div>
+<!--    public content area-->
+    <div class="public-box">
+                <div class="public-head" >
+                    <p class="phead-1" >发布组队信息</p>
+                    <p class="phead-2" >标题: <input id="actionName" class="phead-3" placeholder="请输入"/>  </p>
+                    <p class="phead-4" >模式: <select id="type" class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="1">线下学习</option>
+                        <option value="2">线上学习</option>
+                    </select> </p>
+                    <p class="phead-4" >标签: <select id="label" class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
+                        <option value="saab">期末复习</option>
+                    </select>  </p>
+                    <p class="phead-4" >人数: <select id="maxMember" class="phead-3" property="请选择标签">
+                        <option style="color: #d5d5d5" value="2">最多2人</option>
+                        <option value="3">最多3人</option>
+                        <option value="4">最多4人</option>
+                        <option value="5">最多5人</option>
+                    </select>  </p>
+                    <p class="phead-4" >时间:<input id="time" class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >地点: <input id="site" class="phead-3" placeholder="请输入"/> </p>
+                    <p class="phead-4" >备注: <input id="ps" class="phead-3" placeholder="请输入"/> </p>
+
+                </div>
+        <button class="btn-1">发布</button>
+    </div>
     </body>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            function setCookie(cname,cvalue) {
+                var d=new Date();
+                d.setTime(d.getTime()+7*24*60*60*1000);
+                var expires="expires="+d.toGMTString();
+                document.cookie=cname+"="+cvalue+";"+expires;
+            }
+            function getCookie(cname){
+                var name=cname+"=";
+                var ca=document.cookie.split(';');
+                for (var i=0;i<ca.length;i++){
+                    var c=ca[i].trim();
+                    if(c.indexOf(name)==0){
+                        return c.substring(name.length,c.length);
+                    }
+                }
+            }
+            //滚动条方法
+            $("#main").scroll(200);
+            //掉用后台接口
+            function init(){
+                var test = getCookie("uname");
+                $('#aa').html(test);
+                console.log(test);
+                //显示个人信息
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
+                    data: {username:$("test").val()}, //调用时的参数
+                    dataType: "json",//返回json
+                    success: function(data){//成功
+                        $('.signature').html(data.personalizedSignature);
+                    }
+                });
+                //显示全部组队信息
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8888/studyInfo/getStudyInfo?username=root", //这里写接口地址，
+                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    dataType: "json",//返回json
+                    success: function(data){//成功
+                        console.log(data);
+                        $('#title0').html(data[0].actionName );
+                        $('#part01').html(data[0].userSchool );
+                        $('#part02').html(data[0].site );
+                        $('#part03').html(data[0].time  );
+                        $('#part04').html(data[0].type  );
+                        $('#part05').html(data[0].label  );
+                        $('#remark0').html(data[0].ps);
+
+                        $('#title1').html(data[1].actionName);
+                        $('#part11').html(data[1].userSchool );
+                        $('#part12').html(data[1].site);
+                        $('#part13').html(data[1].time  );
+                        $('#part14').html(data[1].type  );
+                        $('#part15').html(data[1].label );
+                        $('#remark1').html(data[1].ps);
+
+                        $('#title2').html(data[2].actionName);
+                        $('#part21').html(data[2].userSchool );
+                        $('#part22').html(data[2].site );
+                        $('#part23').html(data[2].time );
+                        $('#part24').html(data[2].type );
+                        $('#part25').html(data[2].label );
+                        $('#remark2').html(data[2].ps);
+                    }
+                });
+
+            };
+            init();    // 调用
+            //主页面取值
+            $(function(){
+                //发布组队信息
+                $(".btn-1").click(function(){
+                    const actionName = $("#actionName").val();
+                    const label = $("#label").val();
+                    const maxMember = $("#maxMember").val();
+                    const ps = $("#ps").val();
+                    const site = $("#site").val();
+                    const time = $("#time").val();
+                    const type = $("#type").val();
+                    const userSchool = $("#userSchool").val();
+                    //请求参数
+                    const StudyInfo = {
+                        username: "root",
+                        userSchool: "湖北大学",
+                        actionName: actionName,
+                        type: type,
+                        label: label,
+                        time:time,
+                        site: site,
+                        maxMember: 0,
+                        leftSize: -1,
+                        date: "2019-12-27",
+                        ps: ps,
+                        valid: 1
+                    };
+                    $.ajax({
+                        type: "PUT",
+                        dataType: 'json',
+                        contentType: "application/json",//返回json
+                        url: "http://localhost:8888/studyInfo/insert", //这里写接口地址，
+                        data: JSON.stringify(StudyInfo),
+                        success: function(data){//成功
+                            // console.log(data);
+                        },
+                        //请求失败，包含具体的错误信息
+                        error: function (e) {
+                           console.log(e.status);
+                            console.log(e.responseText);
+                        }
+                    });
+                });
+            });
+         });
+    </script>
 </html>
