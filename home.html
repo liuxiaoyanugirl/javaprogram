@@ -3,6 +3,7 @@
 	<head>
         <meta charset="utf-8">
         <link rel ="stylesheet" href="css/bootstrap.css" >
+        <link rel="stylesheet" href="css/jquery.page.css">
 <!-- Main CSS -->
     <style>
         body{
@@ -103,26 +104,6 @@
             position: relative;
             top: -60px;
         }
-        /*翻页样式*/
-        #pageStyle{
-            display:inline-block;
-            width:32px;
-            height:32px;
-            border:1px solid #CCC;
-            line-height:32px;
-            text-align:center;
-            color:#999;
-            margin-top:20px;
-            text-decoration:none;
-
-        }
-        #pageStyle:hover{
-            background-color:#CCC;
-        }
-        #pageStyle .active{
-            background-color:#0CF;
-            color:#ffffff;
-        }
     </style>
     </head>
     <body>
@@ -154,7 +135,7 @@
              </ul>
 
              <div class="publicBox">
-                 <table class="table">
+                 <table class="table" id="tab">
                      <caption>我发布的帖子</caption>
                      <thead>
                      <tr>
@@ -165,41 +146,21 @@
                          <th>操作</th>
                      </tr>
                      </thead>
-                     <tbody>
-                     <tr class="active">
-                         <td id="1">产品2产品2产品2产品2产品2产品2</td>
-                         <td>组对学习</td>
-                         <td>申请中</td>
+                     <tr id="template" >
+                         <td id="actionName" class="tdc"></td>
+                         <td id="label" class="tdc"></td>
+                         <td id="date" class="tdc"></td>
                          <td><button >查看</button></td>
                          <td><button >删除</button></td>
                      </tr>
-                     <tr class="active">
-                         <td id="2">产品2</td>
-                         <td>10/11/2013</td>
-                         <td>已成功</td>
-                         <td><button >查看</button></td>
-                         <td><button >删除</button></td>
-                     </tr>
-                     <tr  class="active">
-                         <td id="3">产品4</td>
-                         <td>20/10/2013</td>
-                         <td>已拒绝</td>
-                         <td><button >查看</button></td>
-                         <td><button >删除</button></td>
-                     </tr>
-                     <tr class="active">
-                         <td id="4">产品2</td>
-                         <td>10/11/2013</td>
-                         <td>已结束</td>
-                         <td><button >查看</button></td>
-                         <td><button >删除</button></td>
-                     </tr>
-                     </tbody>
                  </table>
-             </div>
+                 <p>
+                     <button id="before">前一页</button>
+                     <span>第<span id="pageN">3</span>/<span id="szs">3</span>页</span>
+                     <button id="after">后一页</button>
+                 </p>
              <div class="joinBox"> <table class="table">
                  <caption>我参与的帖子</caption>
-                 <thead>
                  <tr>
                      <th>标题</th>
                      <th>类型</th>
@@ -207,7 +168,7 @@
                      <th>操作</th>
                      <th>操作</th>
                  </tr>
-                 </thead>
+
                  <tbody>
                  <tr class="active">
                      <td>产品2产品2产品2产品2产品2产品2</td>
@@ -221,54 +182,12 @@
          </div>
 
         </div>
-   
-    </body>
+     </div>
     <script src="jquery.min.js"></script>
     <script type="text/javascript">
-        //翻页
-        $(function(){
-            var $table = $('table');
-            var currentPage = 0;//当前页默认值为0
-            var pageSize = 5;//每一页显示的数目
-            $table.bind('paging',function(){
-                $table.find('tbody tr').hide().slice(currentPage*pageSize,(currentPage+1)*pageSize).show();
-            });
-            var sumRows = $table.find('tbody tr').length;
-            var sumPages = Math.ceil(sumRows/pageSize);//总页数
 
-            var $pager = $('<div class="page"></div>');  //新建div，放入a标签,显示底部分页码
-            for(var pageIndex = 0 ; pageIndex<sumPages ; pageIndex++){
-                $('<a href="#" id="pageStyle" onclick="changCss(this)"><span>'+(pageIndex+1)+'</span></a>').bind("click",{"newPage":pageIndex},function(event){
-                    currentPage = event.data["newPage"];
-                    $table.trigger("paging");
-                    //触发分页函数
-                }).appendTo($pager);
-                $pager.append(" ");
-            }
-            $pager.insertAfter($table);
-            $table.trigger("paging");
-
-            //默认第一页的a标签效果
-            var $pagess = $('#pageStyle');
-            $pagess[0].style.backgroundColor="#006B00";
-            $pagess[0].style.color="#ffffff";
-        });
-        //a链接点击变色，再点回复原色
-        function changCss(obj){
-            var arr = document.getElementsByTagName("a");
-            for(var i=0;i<arr.length;i++){
-                if(obj===arr[i]){       //当前页样式
-                    obj.style.backgroundColor="#006B00";
-                    obj.style.color="#ffffff";
-                }
-                else
-                {
-                    arr[i].style.color="";
-                    arr[i].style.backgroundColor="";
-                }
-            }
-        }
         $(document).ready(function(){
+
             function setCookie(cname,cvalue) {
                 var d=new Date();
                 d.setTime(d.getTime()+7*24*60*60*1000);
@@ -285,6 +204,7 @@
                     }
                 }
             }
+
             // 选择出现隐藏
             $(".joinBox").hide();
             $(".join").click(function(){
@@ -299,20 +219,105 @@
                 $(".public").css("background-color","#9acfea");
                 $(".join").css("background-color","lightgray");
             });
+
+            var test = getCookie("uname");
+            $('#un').html(test);
+            var user = {
+                username: test,
+            };
+            var info = {
+                username: test,
+                pageNum:1,
+                pageSize:5
+            };
+            console.log(info);
+
             function init() {
-                var test = getCookie("uname");
-                $('#un').html(test);
-                console.log(test);
+
+
+                $("#before").click(function(){
+                    var test1=$("#pageN").val();
+                    info.pageNum = test1-1;
+                    //显示全部个人组队信息
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8888/studyInfo/getStudyInfoWithUserIssue", //这里写接口地址，
+                        data: info, //调用时的参数
+                        dataType: "json",//返回json
+                        success: function(data){//成功
+                            console.log(data);
+                            $("#pageN").html(data.pageNum);
+                            $("#szs").html(data.pages);
+                            $("[id=ready]").remove();
+                            // var data = eval("("+msg.responseText+")");
+                            $.each(data, function(i, n){
+                                var row = $("#template").clone();
+                                row.find("#actionName").text(n.actionName);
+                                row.find("#label").text(n.label);
+                                row.find("#date").text(n.date);
+                                row.attr("id","ready");//改变绑定好数据的行的id
+                                row.appendTo("#tab");//添加到模板的容器中
+                            });
+                            // $("[id=ready]").show();
+                        }
+                    });
+
+                });
+                $("#after").click(function(){
+                    var test2=$("#pageN").val();
+                    info.pageNum = test2+1;
+                    console.log(info.pageNum)
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8888/studyInfo/getStudyInfoWithUserIssue", //这里写接口地址，
+                        data: info, //调用时的参数
+                        dataType: "json",//返回json
+                        success: function(data){//成功
+                            console.log(data);
+                            $("#pageN").html(data.pageNum);
+                            $("#szs").html(data.pages);
+                            $("[id=ready]").remove();
+                            // var data = eval("("+msg.responseText+")");
+                            $.each(data, function(i, n){
+                                var row = $("#template").clone();
+                                row.find("#actionName").text(n.actionName);
+                                row.find("#label").text(n.label);
+                                row.find("#date").text(n.date);
+                                row.attr("id","ready");//改变绑定好数据的行的id
+                                row.appendTo("#tab");//添加到模板的容器中
+                            });
+                            // $("[id=ready]").show();
+                        }
+                    });
+                });
+
+                    //显示全部个人组队信息
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8888/studyInfo/getStudyInfoWithUserIssue", //这里写接口地址，
+                        data: info, //调用时的参数
+                        dataType: "json",//返回json
+                        success: function(data){//成功
+                            console.log(data);
+                            $("#pageN").html(data.pageNum);
+                            $("#szs").html(data.pages);
+                            var str = "";//定义用于拼接的字符串
+                            for (var i = 0; i < data.size; i++) {
+                                //拼接表格的行和列
+                                str = "<tr ><td>" + data.list[i].actionName + "</td><td>" + data.list[i].data + "</td><td>"+data.list[i].actionName+"</td> <td><button >查看</button></td> <td><button >删除</button></td></tr>";
+                                //追加到table中
+                                $("#tab").append(str);
+                            }
+                        }
+                    });
                 //显示个人信息
                 $.ajax({
                     type: "GET",
                     contentType: "application/json",
                     url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
-                    data: {username: "root"}, //调用时的参数
-                    dataType: "application/json",//返回json
+                    data: user, //调用时的参数
+                    dataType: "json",//返回json
                     success: function (data) {//成功
-                        console.log(1)
-                        console.log(data)
                         $('#un').html(data.username);
                         $('#lb').html(data.personalizedLabels);
                         $('#sc').html(data.school);
@@ -321,23 +326,14 @@
                         $('#ct').html(data.city);
                     }
                 });
-                //显示全部个人组队信息
-                $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8888/studyInfo/getStudyInfoWithUserIssue?username=root&pageNum=1&pageSize=20", //这里写接口地址，
-                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
-                    dataType: "json",//返回json
-                    success: function(data){//成功
-                        console.log(data);
-                        $('#4').html(data.list[4].actionName );
-                        $('#1').html(data.list[1].actionName);
-                        $('#2').html(data.list[2].actionName);
-                        $('#3').html(data.list[3].actionName);
-                    }
-                });
+
             }
-                init();    // 调用
+            init();    // 调用
+
 
         });
+
     </script>
+    </body>
+
 </html>

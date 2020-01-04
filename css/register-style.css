@@ -1,6 +1,5 @@
-
-html,body,div,span,p,video
-{
+/*-- Reset-Code --*/
+html,body,div,span,h1,h2,h3,h4,h5,h6,p{
 	margin:0;
 	padding:0;
 	border:0;
@@ -8,6 +7,7 @@ html,body,div,span,p,video
 	font:inherit;
 	vertical-align:baseline;
 }
+a{text-decoration:none;}
 img{max-width:100%;}
 body {
 	padding: 0;
@@ -16,12 +16,23 @@ body {
 	background-size: cover;
 	font-family: 'Raleway', sans-serif;
 }
-
+body a {
+	transition: 0.5s all;
+	text-decoration: none;
+	letter-spacing:1px;
+	font-size:15px;
+	font-weight:600;
+}
+body a:hover {
+	text-decoration: none;
+}
+body a:focus, a:hover {
+	text-decoration: none;
+}
 input[type="button"], input[type="submit"] {
 	transition: 0.5s all;
-
 }
-h1, h2, h3, h4{
+h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	padding: 0;
     font-family: 'Raleway', sans-serif;
@@ -40,9 +51,11 @@ p {
 	font-size:14px;
 	font-weight:400;
 }
+
 img{
 	width:100%;
 }
+
 
 input[type="text"] {
     font-size: 15px;
@@ -93,13 +106,14 @@ input[type="Password"] {
 	padding: 0px 10px;
 	border: 1px solid #bbb;
 }
-.btn-block {
+.btn-box2 {
     display: block;
     width: 100%;
 }
-.btn-submit {
+
+.btn-box1{
     color: #fff;
-    background-color: #87CEFA;
+    background-color:#87CEFA ;
     margin-top: 15px;
 	outline:none;
     padding:15px 12px;
@@ -112,31 +126,30 @@ input[type="Password"] {
 	font-family: 'Raleway', sans-serif;
 	transition: 0.5s all;
 }
-.btn-submit:hover{
+
+
+.btn-box1:hover{
 	background-color:#333;
 }
-.box {
-	flex-basis: 50%;
-	box-sizing: border-box;
-	padding: 4em;
-	background-color: #fff;
-}
-
-.box h2 {
+.demo1 h2 {
   display: inline-block;
     font-size: 26px;
     margin-bottom: 10px;
-    color: #87CEFA;
-    letter-spacing: 2px;
+    color:#87CEFA;
+    letter-spacing: 2px;	
 }
-.box h4 {
+.demo1 h4 {
     display: inline-block;
     font-size: 15px;
 	padding: 8px 0px;
     color: #444;
     text-transform: capitalize;
 }
-
+span.fa.fa-facebook {
+    vertical-align: middle;
+    font-size: 20px;
+    padding-left: 20px;
+}
  ::-webkit-input-placeholder {
 color:#777 !important;
 }
@@ -147,7 +160,7 @@ color:#777 !important;
 color:#777 !important;
 letter-spacing:5px;
 }
-:-ms-input-placeholder {
+:-ms-input-placeholder {  
 color:#777 !important;
 }
 
@@ -159,15 +172,20 @@ h1 {
 	color: #fff;
 	font-weight:500;
 }
-
-.left_grid {
-    padding: 10em 4em;
+.demo1 {
+    flex-basis: 50%;
+    box-sizing: border-box;
+	padding: 4em;
+    background-color: #fff;
 }
-.left_grid h3 {
+.left_box {
+    padding: 8em 2em;
+}
+.left_box h3 {
     color: #fff;
     font-size: 2.2em;
 }
-.left_grid h4 {
+.left_box h4 {
     color: #fff;
     font-size: 1.2em;
 	margin: 1em 0;
@@ -175,26 +193,26 @@ h1 {
     font-weight: 500;
     text-transform: capitalize;
 }
-.left_grid p {
-    color: #fff;
-    font-size: 14px;
-	margin: 1em 0;
-	line-height: 28px;
-}
 
-.whole-border{
-	display: flex;
-}
 
-.demo {
+.whole_info {
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.Big_demo{
     padding: 0px;
     flex-basis: 50%;
 	background:#333;
 }
-.box p {
+.demo1 p {
     padding-bottom: 20px;
 }
-
+h3.w3ls {
+    margin: 10px 0px;
+    padding-left: 60px;
+}
+h3.agileits {
+    padding-left: 10px;
+}
 .container {
     width: 65%;
     margin: 0 auto;
@@ -209,7 +227,7 @@ i.user {
     margin-top: 13px;
     text-align: center;
 }
-i.email {
+i.envelope {
    font-size: 16px;
     vertical-align: middle;
     color: #01cd74;
@@ -229,9 +247,16 @@ i.lock {
     margin-top: 13px;
     text-align: center;
 }
+h5 {
+    text-align: center;
+    margin: 10px 0px;
+    font-size: 15px;
+    font-weight: 600;
+	    color: #000;
+}
 
 @media screen and (max-width: 1600px){
-
+	
 }
 @media screen and (max-width: 1440px){
 	.container {
@@ -248,18 +273,18 @@ i.lock {
 	.container {
 		width: 80%;
 	}
-	.left_grid {
-		padding: 7em 3em;
+	.left_box {
+		padding: 4em 3em;
 	}
-	.box {
+	.demo1 {
 		padding: 3em 3em;
 	}
-	.left_grid h4 {
+	.left_box h4 {
 		font-size: 1.1em;
 	}
 }
 @media screen and (max-width: 1024px){
-	.left_grid h3 {
+	.left_box h3 {
 		font-size: 2em;
 	}
 	.container {
@@ -267,7 +292,7 @@ i.lock {
 	}
 }
 @media screen and (max-width: 991px){
-	.box h2 {
+	.demo1 h2 {
 		font-size: 24px;
 	}
 	p {
@@ -279,11 +304,11 @@ i.lock {
 	}
 }
 @media screen and (max-width: 900px){
-
+	
 	.container {
 		width: 90%;
 	}
-	.left_grid h4 {
+	.left_box h4 {
 		font-size: 1em;
 	}
 }
@@ -299,59 +324,59 @@ i.lock {
 	.container {
 		width: 95%;
 	}
-	.left_grid {
-		padding: 6em 3em;
+	.left_box {
+		padding: 4em 3em;
 	}
 }
 @media screen and (max-width: 736px){
-	.left_grid {
+	.left_box {
 		padding: 6em 2em;
 	}
-	.left_grid h3 {
+	.left_box h3 {
 		font-size: 1.7em;
 	}
-	.box h2 {
+	.demo1 h2 {
 		font-size: 22px;
 	}
-	.box {
+	.demo1 {
 		padding: 3em 2em;
 	}
 	.footer p {
 		font-size: 14px;
 	}
-	.box h4 {
+	.demo1 h4 {
 		font-size: 14px;
 	}
-	.btn-submit {
+	.btn-box1 {
 		padding: 13px 12px;
 		font-size: 14px;
 	}
 }
 @media screen and (max-width: 640px){
-	.demo {
+	.Big_demo {
 		padding: 3em 4em;
 		float: none;
 		margin: 0 auto;
 	}
-	.left_grid {
+	.left_box {
 		padding: 0;
 	}
-	.box {
+	.demo1 {
 		padding: 3em 4em;
 		margin: 0 auto;
 	}
 	h1 {
 		font-size: 37px;
 	}
-	.whole-border{
+	.whole_info  {
 		flex-direction: column;
 	}
 }
 @media screen and (max-width: 480px){
-	.demo {
+	.Big_demo {
 		padding: 3em;
 	}
-	.box {
+	.demo1{
 		padding: 3em;
 	}
 	h1 {
@@ -359,30 +384,30 @@ i.lock {
 	}
 }
 @media screen and (max-width: 414px){
-	.demo {
+	.Big_demo {
 		padding: 3em 2em;
 	}
-	.box {
+	.demo1 {
 		padding: 2em;
 	}
 	h1 {
 		font-size: 28px;
 		letter-spacing: 1px;
 	}
-	.left_grid p {
+	.left_box p {
 		font-size: 13px;
 	}
 }
 @media screen and (max-width: 384px){
-	.left_grid h4 {
+	.left_box h4 {
 		font-size: .9em;
 	}
-	.left_grid p {
+	.left_box p {
 		letter-spacing: .5px;
 	}
 }
 @media screen and (max-width: 375px){
-	.left_grid h3 {
+	.left_box h3 {
 		font-size: 1.5em;
 	}
 }
@@ -391,19 +416,17 @@ i.lock {
 		font-size: 25px;
 		letter-spacing: 1px;
 	}
-	.btn-submit {
+	.btn-box1 {
 		padding: 13px 12px;
 		font-size: 13px;
 	}
 	input[type="text"], input[type="email"], input[type="password"] {
 		font-size: 13px;
 	}
-
-	.box h2 {
+	.demo1 h2 {
 		font-size: 20px;
 		letter-spacing: 1px;
 	}
 }
-
 
 

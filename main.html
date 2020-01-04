@@ -6,10 +6,10 @@
 <!-- Main CSS -->
     <style>
         body{
-            width: 900px;
-            height: 880px;
-            background: url("images/bcg.jpg") no-repeat;
-
+            background: url("images/cloud.jpg") no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
         }
         *{
             padding: 0;
@@ -25,6 +25,7 @@
         .mainBox {
             position: absolute;
             width:80%;
+            top: 60px;
             left: 150px;
             height: 600px;
             border-radius: 10px;
@@ -59,13 +60,6 @@
             border-radius: 5px;
             background-color: whitesmoke;
         }
-        /*头部样式*/
-        .text-left{
-            width: 90%;
-            margin: auto;
-            height: 110px;
-            border: 1px solid black;
-        }
         /*标签盒子*/
         .main{
             width: 820px;
@@ -88,8 +82,8 @@
             position: relative;
             width: 76px;
             height: 76px;
-            left: 10px;
-            top: 4px;
+            left: 4px;
+            top: 10px;
             border: 3px solid lightblue;
             border-radius: 100px;
         }
@@ -99,6 +93,7 @@
             width: 120px;
             height: 30px;
             top: 5px;
+            left:120px;
             color: white;
             border-radius: 5px;
             background-color: lightblue;
@@ -106,31 +101,24 @@
         /*标签内介绍框*/
         .label-little{
             position: relative;
-            width: 560px;
+            width: 596px;
             height: 80px;
             border: 1px solid white;
             border-radius: 5px;
-            top: -78px;
-            left: 100px;
+            top: -66px;
+            left: 90px;
         }
         .join{
             position: relative;
             width: 16px;
             height: 16px;
-            top: -20px;
-            left: 600px;
-        }
-        .online{
-            position: relative;
-            left: 100px;        }
-        .test{
-            position: relative;
-            left: 120px;
+            top: -80px;
+            left: 620px;
         }
         .lefPeople{
             position: relative;
-            left: 580px;
-            top: 46px;
+            left: 603px;
+            top: -40px;
 
         }
         /*侧边样式*/
@@ -139,7 +127,7 @@
             width: 14%;
             height: 500px;
             left: 6px;
-            top: -60px
+            top: 20px
            
         }
         .user {
@@ -200,8 +188,8 @@
             position: relative;
             width: 200px;
             height: 400px;
-            top: 140px;
-            left: 1144px;
+            top: 90px;
+            left: 1154px;
             border-radius: 10px;
             border: 1px solid white;
         }
@@ -274,7 +262,7 @@
     <!-- Header content area -->
     <div class="heaBac">
      <div>
-      <h1 style="color: #d5d5d5">supater 学 习 交 友 社 区</h1>
+      <h1 style="color: white;margin-left: 100px">supater 学 习 交 友 社 区</h1>
      </div>
     </div>
         <!-- Main content area -->
@@ -294,58 +282,10 @@
             <!-- Main content -->
                 <div class="col-sm-8">
                     <div class="main">
-                       <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
-                                <p id="title0" style="background-color: #4cae4c"></p>
-                                <span id="part01"></span> <span id="part02"> </span> <span id="part03"> </span><span id="part04"></span><span id="part05"></span>
-                                <p id="remark0" style="background-color: #4cae4c"></p>
-                            <div class="join">
-                                <img  src="images/join.png"/>
-                            </div>
-                            <p class="lefPeople">剩余人数3/5</p>
-                        </div>
-                        </div>
-                       <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                           <div class="label-little">
-                               <p id="title1" style="background-color: #4cae4c"></p>
-                               <span id="part11"></span> <span id="part12"> </span> <span id="part13"> </span><span id="part14"></span><span id="part15"></span>
-                               <p id="remark1" style="background-color: #4cae4c"></p>
-                               <div class="join">
-                                   <img  src="images/join.png"/>
-                               </div>
-                               <p class="lefPeople">剩余人数3/5</p>
-                           </div>
-                        </div>
-                        <div class="labelBox">
-                            <span class="label online">线上</span>
-                            <span class="label test">考研</span>
-                            <div >
-                                <img class="avater" src="images/tx.jpg"/>
-                            </div>
-                            <div class="label-little">
-                                <p id="title2" style="background-color: #4cae4c"></p>
-                                <span id="part21"></span> <span id="part22"> </span> <span id="part23"> </span><span id="part24"></span><span id="part25"></span>
-                                <p id="remark2" style="background-color: #4cae4c"></p>
-                                <div class="join">
-                                    <img  src="images/join.png"/>
-                                </div>
-                                <p class="lefPeople">剩余人数3/5</p>
-                            </div>
-                        </div>
                     </div>
                 <!-- Sidebar -->
                     <div class="sidebar-box">
-                        <img class="user" src="images/tx.jpg">   <br>
+                        <img class="user" src="images/tx01.jpg">   <br>
                         <span id="aa" class="nickName"></span>
                         <span class="signature">  不学好英语不改签名</span>
                         <div class="list-group">
@@ -374,8 +314,8 @@
                         <option value="2">线上学习</option>
                     </select> </p>
                     <p class="phead-4" >标签: <select id="label" class="phead-3" property="请选择标签">
-                        <option style="color: #d5d5d5" value="volvo">考研冲刺</option>
-                        <option value="saab">期末复习</option>
+                        <option style="color: #d5d5d5" value="考研冲刺">考研冲刺</option>
+                        <option value="期末复习">期末复习</option>
                     </select>  </p>
                     <p class="phead-4" >人数: <select id="maxMember" class="phead-3" property="请选择标签">
                         <option style="color: #d5d5d5" value="2">最多2人</option>
@@ -418,12 +358,15 @@
             function init(){
                 var test = getCookie("uname");
                 $('#aa').html(test);
-                console.log(test);
+                var user = {
+                    username: test,
+                };
                 //显示个人信息
                 $.ajax({
                     type: "GET",
                     url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
-                    data: {username:$("test").val()}, //调用时的参数
+                    contentType:"application/json",
+                    data: user, //调用时的参数
                     dataType: "json",//返回json
                     success: function(data){//成功
                         $('.signature').html(data.personalizedSignature);
@@ -432,34 +375,18 @@
                 //显示全部组队信息
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8888/studyInfo/getStudyInfo?username=root", //这里写接口地址，
-                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
+                    url: "http://localhost:8888/studyInfo/getStudyInfo", //这里写接口地址，
+                    data: user, //调用时的参数
                     dataType: "json",//返回json
                     success: function(data){//成功
                         console.log(data);
-                        $('#title0').html(data[0].actionName );
-                        $('#part01').html(data[0].userSchool );
-                        $('#part02').html(data[0].site );
-                        $('#part03').html(data[0].time  );
-                        $('#part04').html(data[0].type  );
-                        $('#part05').html(data[0].label  );
-                        $('#remark0').html(data[0].ps);
-
-                        $('#title1').html(data[1].actionName);
-                        $('#part11').html(data[1].userSchool );
-                        $('#part12').html(data[1].site);
-                        $('#part13').html(data[1].time  );
-                        $('#part14').html(data[1].type  );
-                        $('#part15').html(data[1].label );
-                        $('#remark1').html(data[1].ps);
-
-                        $('#title2').html(data[2].actionName);
-                        $('#part21').html(data[2].userSchool );
-                        $('#part22').html(data[2].site );
-                        $('#part23').html(data[2].time );
-                        $('#part24').html(data[2].type );
-                        $('#part25').html(data[2].label );
-                        $('#remark2').html(data[2].ps);
+                        var str = "";//定义用于拼接的字符串
+                        for (var i = 0; i < data.length; i++) {
+                            //拼接表格的行和列
+                            str = "<div class='labelBox' > <span class='label'>" +data[i].label + "</span><div><img class='avater' src=images/tx.jpg/></div><div class='label-little'><p>" + '组队标题：'+data[i].actionName + "</p> <span >"+ '发起人：' + data[i].username + "</span> <span >" + '&nbsp;||&nbsp;所在学校：'+ data[i].userSchool + "</span><span >" + '&nbsp;||&nbsp;学习时间：'+ data[i].time + "</span><span >"+ '&nbsp;||&nbsp;学习地点：' + data[i].site + "</span><span>" + '&nbsp;||&nbsp;人数：'+ data[i].maxMember + "</span> <p>"+ '备注：' + data[i].ps + "</p> <div class='join'><img  src=images/join.png/></div><p class='lefPeople'>剩余人数3/5</p></div></div>";
+                            //追加到table中
+                            $(".main").append(str);
+                        }
                     }
                 });
 
