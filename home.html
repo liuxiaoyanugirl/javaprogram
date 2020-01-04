@@ -306,10 +306,12 @@
                 //显示个人信息
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8888/userInfo/getUserInfo?username=root", //这里写接口地址，
-                    // data: {username:$("#username").val(), content:$("root").val()}, //调用时的参数
-                    dataType: "json",//返回json
+                    contentType: "application/json",
+                    url: "http://localhost:8888/userInfo/getUserInfo", //这里写接口地址，
+                    data: {username: "root"}, //调用时的参数
+                    dataType: "application/json",//返回json
                     success: function (data) {//成功
+                        console.log(1)
                         console.log(data)
                         $('#un').html(data.username);
                         $('#lb').html(data.personalizedLabels);
@@ -327,7 +329,7 @@
                     dataType: "json",//返回json
                     success: function(data){//成功
                         console.log(data);
-                        $('#4').html(data.list[0].actionName );
+                        $('#4').html(data.list[4].actionName );
                         $('#1').html(data.list[1].actionName);
                         $('#2').html(data.list[2].actionName);
                         $('#3').html(data.list[3].actionName);
