@@ -25,7 +25,7 @@
         .mainBox {
             position: absolute;
             width:80%;
-            top: 60px;
+            top: 220px;
             left: 150px;
             height: 600px;
             border-radius: 10px;
@@ -56,7 +56,6 @@
             border: 1px solid lightblue;
         }
         .nav-link:hover{
-            text-decoration:none;
             border: 1px solid black;
             border-radius: 5px;
             background-color: whitesmoke;
@@ -263,7 +262,7 @@
     <!-- Header content area -->
     <div class="heaBac">
      <div>
-      <h1 style="color: white;margin-left: 100px">supater 学 习 交 友 社 区</h1>
+      <h1 style="color: white;margin-left: 100px">supater 娱 乐 交 友 社 区</h1>
      </div>
     </div>
         <!-- Main content area -->
@@ -272,14 +271,10 @@
             <div class="MainNavigation">
             <ul>
                 <li>
-                <a class="nav-link" href="main.html" id="sy">首页</a>
-
-                <a class="nav-link" href="main.html">组队学习</a>
-
-                <a class="nav-link" href="enjoy.html" id="chwl">吃喝玩乐</a>
-
-                <a class="nav-link" href="http://hubu.fy.chaoxing.com/portal">课程讲座</a>
-
+                    <a class="nav-link" href="#">首页信息</a>
+                    <a class="nav-link" href="#">组队学习</a>
+                    <a class="nav-link" href="#">吃喝玩乐</a>
+                <a class="nav-link" href="#">课程讲座</a>
                 <a class="nav-link" href="home.html">个人中心</a>
                 </li>
             </ul>
@@ -293,19 +288,6 @@
                         <img class="user" src="images/tx01.jpg">   <br>
                         <span id="aa" class="nickName"></span>
                         <span class="signature">  不学好英语不改签名</span>
-                        <div class="list-group">
-                            <a class="list-group-item" href="main.html">发布组队</a>
-                            <div class="list-line"></div>
-                            <a class="list-group-item" href="home.html">我的组队</a>
-                            <div class="list-line"></div>
-                            <a class="list-group-item" href="home.html">个人信息</a>
-                            <div class="list-line"></div>
-                            <a class="list-group-item" href="#">进入聊天</a>
-                            <div class="list-line"></div>
-                            <a class="list-group-item" href="#">个人信息</a>
-                            <div class="list-line"></div>
-                            <a class="list-group-item" href="#">了解更多</a>
-                    </div>
                     </div>
                 </div>
         </div>
@@ -340,10 +322,6 @@
     <script src="js/jquery.cookie.js"></script>
     <script type="text/javascript">
 
-        $("#chwl").click(function () {
-            window.location.href="enjoy.html";
-            console.log(777)
-        })
         $(document).ready(function(){
             function setCookie(cname,cvalue) {
                 var d=new Date();
